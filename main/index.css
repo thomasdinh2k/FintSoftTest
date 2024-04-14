@@ -81,11 +81,9 @@ a {
 
 .dropdown-submenu.left {
 	left: 100%;
-	background-color: red;
 }
 .dropdown-submenu.right {
 	right: 100%;
-	background-color: blueviolet;
 }
 
 .dropdown-submenu h3 {

@@ -93,24 +93,44 @@ menuLi.forEach(menuItem => {
 	if (targetElement) {
 		// Khong phai luc nao cung co Element
 
+		// Di tim the <a> tag
+		
+
 		const targetChildElements = menuItem.querySelectorAll(".dropdown-submenu")
 
 		if (coordinate > 600) {
-			console.log("Coor bigger than 600")
 			targetElement.style.left = `${coordinate}px`
 
-
+			// Dich sub-menu sang trai
 			targetChildElements.forEach(e => {
 				e.classList.add("right")
 			})
+
+			// Thay doi chieu mui ten
+			targetElement.querySelectorAll(".test").forEach(tag => {
+				console.log("span", tag.querySelector("span"))
+
+				// Remove the span
+				tag.querySelector("span").remove()
+				console.log(tag.innerHTML)
+
+				// Append new corrected span
+				// <span class="arrow arrow-right"></span>
+
+				tag.innerHTML =
+					" <span class='arrow arrow-left'></span>" + tag.innerHTML
+			})
 			
 		} else {
-			console.log(targetElement)
+			// console.log(targetElement)
 			targetElement.style.left = `${coordinate}px`
 
+			// Dich sub-menu sang phai
 			targetChildElements.forEach(e => {
 				e.classList.add("left")
 			})
+
+			
 		}
 	}
 })
