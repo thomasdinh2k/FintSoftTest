@@ -13,16 +13,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		event.stopPropagation()
 
 		barItems.forEach(barItem => {
-			// barItem.addEventListener("mouseover", () => {
-			// 	// Process on hover
-			// 	const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
+			barItem.addEventListener("mouseover", () => {
+				// Process on hover
+				const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
 
-			// 	// Close other dropdown
-			// 	document.querySelectorAll(".dropdown-menu.show").forEach(activeMenu => {
-			// 		activeMenu.classList.remove("show")
-			// 	})
-			// 	activeDropdownMenu.classList.add("show")
-			// })
+				// Close other dropdown
+				document.querySelectorAll(".dropdown-menu.show").forEach(activeMenu => {
+					activeMenu.classList.remove("show")
+				})
+				activeDropdownMenu.classList.add("show")
+			})
 
 			barItem.addEventListener("click", () => {
 				console.log("Clicked");
@@ -142,10 +142,12 @@ menuLi.forEach(menuItem => {
 			})
 		}
 
-		if (percentage > 80) {
+		
+		var dropdown_size = 226 + 15
+		if ( coordinate + dropdown_size > viewportWidth) {
 			// Phòng tránh trường hợp thẻ dropdown bị tràn viền
-			var dropdown_size = 226
 			console.log("overflowed")
+			// targetElement.style.backgroundColor = 'red';
 			targetElement.style.left = `${viewportWidth - dropdown_size}px`
 		}
 	}
