@@ -93,19 +93,24 @@ menuLi.forEach(menuItem => {
 	if (targetElement) {
 		// Khong phai luc nao cung co Element
 
-		const targetChildElement = menuItem.querySelector(".dropdown-submenu")
+		const targetChildElements = menuItem.querySelectorAll(".dropdown-submenu")
 
 		if (coordinate > 600) {
 			console.log("Coor bigger than 600")
 			targetElement.style.left = `${coordinate}px`
 
-			// set to right: 100%
-			// console.log(targetChildElement.style.left);
-			targetChildElement.style.left = 0
-			targetChildElement.style.right = "100%" // Setting right to 100%
+
+			targetChildElements.forEach(e => {
+				e.classList.add("right")
+			})
+			
 		} else {
 			console.log(targetElement)
 			targetElement.style.left = `${coordinate}px`
+
+			targetChildElements.forEach(e => {
+				e.classList.add("left")
+			})
 		}
 	}
 })

@@ -72,11 +72,20 @@ a {
 	padding: 0 7px;
 	position: absolute;
 	top: 0;
-	left: 100%;
+	/* left: 100%; */
 	/* right: 100%; Về left thì left: 100% */
 	
 	/* margin-left: 1rem; */
 	background-color: aquamarine;
+}
+
+.dropdown-submenu.left {
+	left: 100%;
+	background-color: red;
+}
+.dropdown-submenu.right {
+	right: 100%;
+	background-color: blueviolet;
 }
 
 .dropdown-submenu h3 {
@@ -119,13 +128,13 @@ li:hover #bar-level {
 	/* transition: all 3s; */
 }
 
-.right {
+.arrow-right {
 	margin-left: 5px;
 	transform: rotate(-45deg);
 	-webkit-transform: rotate(-45deg);
 }
 
-.left {
+.arrow-left {
 	margin-right: 5px;
 	transform: rotate(135deg);
 	-webkit-transform: rotate(135deg);
