@@ -90,11 +90,22 @@ menuLi.forEach(menuItem => {
 
 	const targetElement = menuItem.children[1]
 
-	
 	if (targetElement) {
-		console.log(targetElement);
+		// Khong phai luc nao cung co Element
 
-		targetElement.style.left = `${coordinate}px`
-		
+		const targetChildElement = menuItem.querySelector(".dropdown-submenu")
+
+		if (coordinate > 600) {
+			console.log("Coor bigger than 600")
+			targetElement.style.left = `${coordinate}px`
+
+			// set to right: 100%
+			// console.log(targetChildElement.style.left);
+			targetChildElement.style.left = 0
+			targetChildElement.style.right = "100%" // Setting right to 100%
+		} else {
+			console.log(targetElement)
+			targetElement.style.left = `${coordinate}px`
+		}
 	}
 })
