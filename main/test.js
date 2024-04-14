@@ -3,28 +3,31 @@ const dropdownMenus = document.querySelectorAll(".dropdown-menu")
 const dropdownLinks = document.querySelectorAll(".dropdown-menu a.test")
 const dropdownSubmenus = document.querySelectorAll(".dropdown-submenu")
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function (event) {
 	// const barItem = document.querySelectorAll("#bar-level")
 
 	const barItems = document.querySelectorAll(".main-nav > ul > li") // Assuming you want to target each top-level li in .main-nav
 
 	// Add event listener on Hover
-
 	if (barItems) {
-		barItems.forEach(barItem => {
-			barItem.addEventListener("mouseover", () => {
-				// Process on hover
-				const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
+		event.stopPropagation()
 
-				// Close other dropdown
-				document.querySelectorAll(".dropdown-menu.show").forEach(activeMenu => {
-					activeMenu.classList.remove("show")
-				})
-				activeDropdownMenu.classList.add("show")
-			})
+		barItems.forEach(barItem => {
+			// barItem.addEventListener("mouseover", () => {
+			// 	// Process on hover
+			// 	const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
+
+			// 	// Close other dropdown
+			// 	document.querySelectorAll(".dropdown-menu.show").forEach(activeMenu => {
+			// 		activeMenu.classList.remove("show")
+			// 	})
+			// 	activeDropdownMenu.classList.add("show")
+			// })
 
 			barItem.addEventListener("click", () => {
-				// Process on hover
+				console.log("Clicked");
+				
+				// Process on click
 				const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
 
 				// Close other dropdown
@@ -65,13 +68,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Close all document if user click away
 document.addEventListener("click", event => {
-	console.log("Outside clicked")
-
+	event.stopPropagation()
+	
 	// Prevent close menu when user mis-click the closest drop-down
 	if (
-		!event.target.closest(".dropdown-menu") ||
+		!event.target.closest(".dropdown-menu") &&
 		!event.target.closest(".main-nav")
 	) {
+		console.log("Outside clicked")
 		dropdownMenus.forEach(menu => {
 			menu.classList.remove("show")
 		})
@@ -82,8 +86,8 @@ document.addEventListener("click", event => {
 	}
 })
 
+// Điều chỉnh căn lề của menu con
 const menuLi = document.querySelectorAll(".parent > li")
-
 menuLi.forEach(menuItem => {
 	const coordinate = menuItem.getBoundingClientRect().left
 	const targetElement = menuItem.children[1]
