@@ -85,24 +85,16 @@ document.addEventListener("click", event => {
 const menuLi = document.querySelectorAll(".parent > li")
 
 menuLi.forEach(menuItem => {
-	var coor = menuItem.getBoundingClientRect().left
-	// var caigiday = menuItem.firstChild.nextElementSibling.nextElementSibling
+	let coordinate = menuItem.getBoundingClientRect().left
+	// const targetElement = menuItem.childNodes[1]
 
-	if (menuItem) {
-		if (menuItem.firstChild) {
-			if (menuItem.firstChild.nextElementSibling) {
-				if (menuItem.firstChild.nextElementSibling.nextElementSibling) {
-					console.log(coor);
-					menuItem.firstChild.nextElementSibling.nextElementSibling.style.left = `${coor}px`
-					console.log(menuItem.firstChild.nextElementSibling.nextElementSibling.style.left)
+	const targetElement = menuItem.children[1]
 
-				}
-			}
-		}
+	
+	if (targetElement) {
+		console.log(targetElement);
+
+		targetElement.style.left = `${coordinate}px`
+		
 	}
-
-	// menuItem.nextElementSibling.style.left = coor
-
-	// console.log(menuItem.firstChild.nextElementSibling.nextElementSibling)
-
 })
