@@ -41,7 +41,7 @@ nav {
 	list-style-type: none;
 	padding: 12px 0;
 	/* margin-right: 12px; */
-	position: relative;
+	/* position: relative; */
 	white-space: nowrap;
 }
 
@@ -60,13 +60,11 @@ a {
 	position: absolute;
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 	left: 0;
-	top: 50px;
+	top: 90px;
 	padding: 0;
 	border-top: 1px solid red;
-
 	background-color: aliceblue;
 	padding: 10px 15px;
-
 }
 
 .dropdown-submenu {
@@ -75,7 +73,7 @@ a {
 	position: absolute;
 	top: 0;
 	left: 100%;
-	margin-left: 1rem;
+	/* margin-left: 1rem; */
 	background-color: aquamarine;
 }
 
