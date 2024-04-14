@@ -72,10 +72,7 @@ a {
 	padding: 0 7px;
 	position: absolute;
 	top: 0;
-	/* left: 100%; */
-	/* right: 100%; Về left thì left: 100% */
-	
-	/* margin-left: 1rem; */
+	max-width: 400px;
 	background-color: aquamarine;
 }
 

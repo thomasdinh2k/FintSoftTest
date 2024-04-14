@@ -85,20 +85,28 @@ document.addEventListener("click", event => {
 const menuLi = document.querySelectorAll(".parent > li")
 
 menuLi.forEach(menuItem => {
-	let coordinate = menuItem.getBoundingClientRect().left
-	// const targetElement = menuItem.childNodes[1]
-
+	const coordinate = menuItem.getBoundingClientRect().left
 	const targetElement = menuItem.children[1]
+	const menuLabel = menuItem.children[0].innerHTML
+	const viewportWidth = window.innerWidth
 
 	if (targetElement) {
 		// Khong phai luc nao cung co Element
 
 		// Di tim the <a> tag
-		
+
+		const percentage = Math.round((coordinate / viewportWidth) * 100)
+		console.log(`${menuLabel} has a percentage of ${percentage}%`)
 
 		const targetChildElements = menuItem.querySelectorAll(".dropdown-submenu")
+		const test = {
+			a: coordinate + 400,
+			viewportWidth,
+			total: viewportWidth - (coordinate + 400),
+		}
 
-		if (coordinate > 600) {
+		console.log(test)
+		if (percentage > 50) {
 			targetElement.style.left = `${coordinate}px`
 
 			// Dich sub-menu sang trai
@@ -108,11 +116,11 @@ menuLi.forEach(menuItem => {
 
 			// Thay doi chieu mui ten
 			targetElement.querySelectorAll(".test").forEach(tag => {
-				console.log("span", tag.querySelector("span"))
+				// console.log("span", tag.querySelector("span"))
 
 				// Remove the span
 				tag.querySelector("span").remove()
-				console.log(tag.innerHTML)
+				// console.log(tag.innerHTML)
 
 				// Append new corrected span
 				// <span class="arrow arrow-right"></span>
@@ -120,7 +128,6 @@ menuLi.forEach(menuItem => {
 				tag.innerHTML =
 					" <span class='arrow arrow-left'></span>" + tag.innerHTML
 			})
-			
 		} else {
 			// console.log(targetElement)
 			targetElement.style.left = `${coordinate}px`
@@ -129,8 +136,13 @@ menuLi.forEach(menuItem => {
 			targetChildElements.forEach(e => {
 				e.classList.add("left")
 			})
+		}
 
-			
+		if (percentage > 80) {
+			// Phòng tránh trường hợp thẻ dropdown bị tràn viền
+			var dropdown_size = 226
+			console.log("overflowed")
+			targetElement.style.left = `${viewportWidth - dropdown_size}px`
 		}
 	}
 })
