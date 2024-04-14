@@ -81,3 +81,28 @@ document.addEventListener("click", event => {
 		})
 	}
 })
+
+const menuLi = document.querySelectorAll(".parent > li")
+
+menuLi.forEach(menuItem => {
+	var coor = menuItem.getBoundingClientRect().left
+	// var caigiday = menuItem.firstChild.nextElementSibling.nextElementSibling
+
+	if (menuItem) {
+		if (menuItem.firstChild) {
+			if (menuItem.firstChild.nextElementSibling) {
+				if (menuItem.firstChild.nextElementSibling.nextElementSibling) {
+					console.log(coor);
+					menuItem.firstChild.nextElementSibling.nextElementSibling.style.left = `${coor}px`
+					console.log(menuItem.firstChild.nextElementSibling.nextElementSibling.style.left)
+
+				}
+			}
+		}
+	}
+
+	// menuItem.nextElementSibling.style.left = coor
+
+	// console.log(menuItem.firstChild.nextElementSibling.nextElementSibling)
+
+})
