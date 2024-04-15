@@ -9,6 +9,8 @@ if (viewportWidth < 1400) {
 	document.querySelector("body").classList.add("mobile-version")
 } else {
 	document.querySelector("body").classList.remove("mobile-version")
+
+	document.querySelector(".open-button").style.display = "none"
 }
 console.log(document.querySelector("body").classList.value)
 
@@ -68,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					event.stopPropagation()
 					event.preventDefault()
 
-					
+
 					let nextUl = submenu.nextElementSibling
 
 					nextUl.classList.toggle("show")
