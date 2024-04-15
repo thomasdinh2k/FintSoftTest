@@ -12,45 +12,73 @@ if (viewportWidth < 1400) {
 }
 console.log(document.querySelector("body").classList.value)
 
+function closeAllMenu() {
+	document
+		.querySelectorAll(".dropdown-menu.show")
+		.forEach((activeMenu, aIndex) => {
+			activeMenu.classList.remove("show")
+		})
+}
+
 document.addEventListener("DOMContentLoaded", function (event) {
 	// const barItem = document.querySelectorAll("#bar-level")
 
 	const barItems = document.querySelectorAll(".main-nav > ul > li") // Assuming you want to target each top-level li in .main-nav
 
-	// Add event listener on Hover
+	// Show Menu on Hover
 	if (barItems) {
 		event.stopPropagation()
 
-		barItems.forEach(barItem => {
-			barItem.addEventListener("mouseover", () => {
-				// Process on hover
-				const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
+		barItems.forEach((item) => { 
+			if (item.querySelector(".nav-item")) {
+				// Thẻ <a>
+				item.querySelector('.nav-item').addEventListener("mouseover", () => { 
+					const activeDropdownMenu = item.querySelector(".dropdown-menu");
+					
+					
+					closeAllMenu()
+					activeDropdownMenu.classList.toggle("show")
+	
+				 })
+				item.querySelector('.nav-item').addEventListener("click", () => { 
+					const activeDropdownMenu = item.querySelector(".dropdown-menu");
+					
+					
+					closeAllMenu()
+					activeDropdownMenu.classList.toggle("show")
+	
+				 })
+			}
+		 })
 
-				// Close other dropdown
-				document.querySelectorAll(".dropdown-menu.show").forEach(activeMenu => {
-					activeMenu.classList.remove("show")
-				})
-				activeDropdownMenu.classList.add("show")
-			})
+		// barItems.forEach((barItem, bIndex) => {
+		// 	barItem.addEventListener("mouseover", () => {
+		// 		// Process on hover
+		// 		const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
 
-			barItem.addEventListener("click", () => {
-				console.log("Clicked")
+		// 		// Close other dropdown
+		// 		closeAllMenu()
 
-				// Process on click
-				const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
+		// 		activeDropdownMenu.classList.add("show")
+		// 	})
 
-				// Close other dropdown
-				document.querySelectorAll(".dropdown-menu.show").forEach(activeMenu => {
-					activeMenu.classList.remove("show")
-				})
-				activeDropdownMenu.classList.add("show")
-			})
-		})
+		// 	barItem.addEventListener("click", () => {
+		// 		console.log("Clicked")
+
+		// 		// Process on click
+		// 		const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
+
+		// 		// Close other dropdown
+		// 		closeAllMenu()
+				
+		// 		activeDropdownMenu.classList.add("show")
+		// 	})
+		// })
 	} else {
 		console.log("Couldn't find bar items")
 	}
 
-	// Add event listener
+	// Show Submenu
 	dropdownLinks.forEach(link => {
 		link.classList.remove("show")
 		link.addEventListener("click", event => {
@@ -69,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			if (nextUl.classList.contains("show")) {
 				nextUl.classList.remove("show")
 			} else {
-				nextUl.classList.add("show")
+				nextUl.classList.toggle("show")
 			}
 		})
 	})
@@ -108,16 +136,18 @@ menuLi.forEach(menuItem => {
 		// Di tim the <a> tag
 
 		const percentage = Math.round((coordinate / viewportWidth) * 100)
-		console.log(`${menuLabel} has a percentage of ${percentage}%`)
+
+		// console.log(`${menuLabel} has a percentage of ${percentage}%`)
 
 		const targetChildElements = menuItem.querySelectorAll(".dropdown-submenu")
+		
 		const test = {
 			a: coordinate + 400,
 			viewportWidth,
 			total: viewportWidth - (coordinate + 400),
 		}
 
-		console.log(test)
+		// console.log(test)
 		if (percentage > 50) {
 			targetElement.style.left = `${coordinate}px`
 
