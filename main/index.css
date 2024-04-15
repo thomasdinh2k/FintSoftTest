@@ -23,6 +23,9 @@ body {
 .show {
 	display: block !important;
 }
+.show-children {
+	display: block !important;
+}
 
 /* header {
 	background-color: antiquewhite;
