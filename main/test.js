@@ -13,11 +13,12 @@ if (viewportWidth < 1400) {
 console.log(document.querySelector("body").classList.value)
 
 function closeAllMenu() {
-	document
-		.querySelectorAll(".dropdown-menu.show")
-		.forEach((activeMenu, aIndex) => {
-			activeMenu.classList.remove("show")
-		})
+	document.querySelectorAll(".dropdown-menu.show").forEach(activeMenu => {
+		activeMenu.classList.remove("show")
+	})
+	document.querySelectorAll(".dropdown-submenu.show").forEach(activeMenu => {
+		activeMenu.classList.remove("show")
+	})
 }
 
 document.addEventListener("DOMContentLoaded", function (event) {
@@ -25,9 +26,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 	const barItems = document.querySelectorAll(".main-nav > ul > li") // Assuming you want to target each top-level li in .main-nav
 
-	// Show Menu on Hover
+	// Show Menu
 	if (barItems) {
-		event.stopPropagation()
+		
 
 		barItems.forEach(item => {
 			if (item.querySelector(".nav-item")) {
@@ -40,48 +41,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
 						activeDropdownMenu.classList.toggle("show")
 					})
 				}
-				item.querySelector(".nav-item").addEventListener("click", () => {
-					const activeDropdownMenu = item.querySelector(".dropdown-menu")
+				item.querySelector(".nav-item").addEventListener("click", (event) => {
+
+					event.stopPropagation()
+					event.preventDefault()
 
 					closeAllMenu()
-					activeDropdownMenu.classList.toggle("show")
+					
+					console.log("Clicked");
+					
+					const activeDropdownMenu = item.querySelector(".dropdown-menu")
+
+					if (activeDropdownMenu.classList.contains("show")) {
+						console.log("clearing");
+						activeDropdownMenu.classList.remove("show")
+					} else {
+						activeDropdownMenu.classList.add("show")
+					}
 				})
 			}
 		})
-
-		// barItems.forEach((barItem, bIndex) => {
-		// 	barItem.addEventListener("mouseover", () => {
-		// 		// Process on hover
-		// 		const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
-
-		// 		// Close other dropdown
-		// 		closeAllMenu()
-
-		// 		activeDropdownMenu.classList.add("show")
-		// 	})
-
-		// 	barItem.addEventListener("click", () => {
-		// 		console.log("Clicked")
-
-		// 		// Process on click
-		// 		const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
-
-		// 		// Close other dropdown
-		// 		closeAllMenu()
-
-		// 		activeDropdownMenu.classList.add("show")
-		// 	})
-		// })
 	} else {
 		console.log("Couldn't find bar items")
 	}
 
-	// Show Submenu
+	// Show dropdown-submenu
+	// const dropdownLinks = document.querySelectorAll(".dropdown-menu a.test")
 	dropdownLinks.forEach(link => {
-		link.classList.remove("show")
+		// link.classList.remove("show")
 		link.addEventListener("click", event => {
-			event.preventDefault()
+			
 			event.stopPropagation()
+			event.preventDefault()
 
 			// Close opening sub-menu first
 			dropdownSubmenus.forEach(subMenu => {
@@ -92,10 +83,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 			// Then active "dropdown-submenu"
 			let nextUl = link.nextElementSibling
+			
+			console.log("nextUl", nextUl.classList.value);
+
 			if (nextUl.classList.contains("show")) {
 				nextUl.classList.remove("show")
 			} else {
-				nextUl.classList.toggle("show")
+				nextUl.classList.add("show")
 			}
 		})
 	})
