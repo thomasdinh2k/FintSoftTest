@@ -12,7 +12,6 @@ if (viewportWidth < 1400) {
 }
 console.log(document.querySelector("body").classList.value)
 
-
 document.addEventListener("DOMContentLoaded", function (event) {
 	// const barItem = document.querySelectorAll("#bar-level")
 
@@ -35,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			})
 
 			barItem.addEventListener("click", () => {
-				console.log("Clicked");
-				
+				console.log("Clicked")
+
 				// Process on click
 				const activeDropdownMenu = barItem.querySelector(".dropdown-menu")
 
@@ -79,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // Close all document if user click away
 document.addEventListener("click", event => {
 	event.stopPropagation()
-	
+
 	// Prevent close menu when user mis-click the closest drop-down
 	if (
 		!event.target.closest(".dropdown-menu") &&
@@ -102,7 +101,6 @@ menuLi.forEach(menuItem => {
 	const coordinate = menuItem.getBoundingClientRect().left
 	const targetElement = menuItem.children[1]
 	const menuLabel = menuItem.children[0].innerHTML
-	
 
 	if (targetElement) {
 		// Khong phai luc nao cung co Element
@@ -152,9 +150,8 @@ menuLi.forEach(menuItem => {
 			})
 		}
 
-		
 		var dropdown_size = 226 + 15
-		if ( coordinate + dropdown_size > viewportWidth) {
+		if (coordinate + dropdown_size > viewportWidth) {
 			// Phòng tránh trường hợp thẻ dropdown bị tràn viền
 			console.log("overflowed")
 			// targetElement.style.backgroundColor = 'red';
@@ -164,9 +161,24 @@ menuLi.forEach(menuItem => {
 })
 
 // Close button
-const closeBtn = document.querySelector("li.close-button");
-const navBar = document.querySelector(".parent");
+const closeBtn = document.querySelector("li.close-button")
+const navBar = document.querySelector(".parent")
 
-closeBtn.addEventListener("click", () => { 
+closeBtn.addEventListener("click", () => {
+	navBar.classList.toggle("hide")
+	navBar.style.transition = "transform 0.5s ease"
+	document.querySelector("li.open-button").style.display = "block"
+})
+
+// navBar.addEventListener("animationend", function () {
+// 	navBar.style.display = 'none'
+
+// })
+
+document.querySelector(".open-button").addEventListener("click", () => {
 	navBar.classList.toggle("hide");
- })
+	document.querySelector("li.open-button").style.display = 'none'
+})
+
+
+
