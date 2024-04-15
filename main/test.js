@@ -2,6 +2,16 @@
 const dropdownMenus = document.querySelectorAll(".dropdown-menu")
 const dropdownLinks = document.querySelectorAll(".dropdown-menu a.test")
 const dropdownSubmenus = document.querySelectorAll(".dropdown-submenu")
+const viewportWidth = window.innerWidth
+
+// Mobile version
+if (viewportWidth < 1400) {
+	document.querySelector("body").classList.add("mobile-version")
+} else {
+	document.querySelector("body").classList.remove("mobile-version")
+}
+console.log(document.querySelector("body").classList.value)
+
 
 document.addEventListener("DOMContentLoaded", function (event) {
 	// const barItem = document.querySelectorAll("#bar-level")
@@ -92,7 +102,7 @@ menuLi.forEach(menuItem => {
 	const coordinate = menuItem.getBoundingClientRect().left
 	const targetElement = menuItem.children[1]
 	const menuLabel = menuItem.children[0].innerHTML
-	const viewportWidth = window.innerWidth
+	
 
 	if (targetElement) {
 		// Khong phai luc nao cung co Element

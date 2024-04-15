@@ -126,7 +126,6 @@ li:hover #bar-level {
 
 /* Caret */
 .arrow {
-	
 	border: solid black;
 	border-width: 0 3px 3px 0;
 	display: inline-block;
@@ -146,10 +145,28 @@ li:hover #bar-level {
 	-webkit-transform: rotate(135deg);
 }
 
+.arrow-down {
+	margin-left: 5px;
+	transform: rotate(45deg);
+	-webkit-transform: rotate(45deg);
+}
+
 @media (max-width: 1400px) {
-	.parent li a {
-		display: none;
+	.parent {
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		
 	}
+
+	.dropdown-menu {
+		display: block !important;
+		position: static;
+		box-shadow: none;
+		border-top: none;
+		/* border-bottom: 1px solid red; */
+	}
+
 
 	.parent .home-button > a,
 	.parent .toggle-button > a {
