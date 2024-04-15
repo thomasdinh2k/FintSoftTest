@@ -29,27 +29,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	if (barItems) {
 		event.stopPropagation()
 
-		barItems.forEach((item) => { 
+		barItems.forEach(item => {
 			if (item.querySelector(".nav-item")) {
 				// Thẻ <a>
-				item.querySelector('.nav-item').addEventListener("mouseover", () => { 
-					const activeDropdownMenu = item.querySelector(".dropdown-menu");
-					
-					
+				if (!viewportWidth < 1400) {
+					item.querySelector(".nav-item").addEventListener("mouseover", () => {
+						const activeDropdownMenu = item.querySelector(".dropdown-menu")
+
+						closeAllMenu()
+						activeDropdownMenu.classList.toggle("show")
+					})
+				}
+				item.querySelector(".nav-item").addEventListener("click", () => {
+					const activeDropdownMenu = item.querySelector(".dropdown-menu")
+
 					closeAllMenu()
 					activeDropdownMenu.classList.toggle("show")
-	
-				 })
-				item.querySelector('.nav-item').addEventListener("click", () => { 
-					const activeDropdownMenu = item.querySelector(".dropdown-menu");
-					
-					
-					closeAllMenu()
-					activeDropdownMenu.classList.toggle("show")
-	
-				 })
+				})
 			}
-		 })
+		})
 
 		// barItems.forEach((barItem, bIndex) => {
 		// 	barItem.addEventListener("mouseover", () => {
@@ -70,7 +68,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 		// 		// Close other dropdown
 		// 		closeAllMenu()
-				
+
 		// 		activeDropdownMenu.classList.add("show")
 		// 	})
 		// })
@@ -140,7 +138,7 @@ menuLi.forEach(menuItem => {
 		// console.log(`${menuLabel} has a percentage of ${percentage}%`)
 
 		const targetChildElements = menuItem.querySelectorAll(".dropdown-submenu")
-		
+
 		const test = {
 			a: coordinate + 400,
 			viewportWidth,
@@ -206,9 +204,6 @@ closeBtn.addEventListener("click", () => {
 // })
 
 document.querySelector(".open-button").addEventListener("click", () => {
-	navBar.classList.toggle("hide");
-	document.querySelector("li.open-button").style.display = 'none'
+	navBar.classList.toggle("hide")
+	document.querySelector("li.open-button").style.display = "none"
 })
-
-
-
