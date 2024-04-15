@@ -162,3 +162,11 @@ menuLi.forEach(menuItem => {
 		}
 	}
 })
+
+// Close button
+const closeBtn = document.querySelector("li.close-button");
+const navBar = document.querySelector(".parent");
+
+closeBtn.addEventListener("click", () => { 
+	navBar.classList.toggle("hide");
+ })
