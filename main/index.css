@@ -1,9 +1,19 @@
+body {
+	margin: 0;
+}
+
 :root {
 	--color-grey: #e5e5e5;
 }
 
 .grid {
 	display: grid;
+}
+
+.logo-vnexpress {
+	display: flex;
+	justify-content: space-around;
+	padding: 12px 0;
 }
 
 .flex {
@@ -14,10 +24,10 @@
 	display: block !important;
 }
 
-header {
+/* header {
 	background-color: antiquewhite;
 	height: 33px;
-}
+} */
 
 nav {
 	border-top: 1px solid var(--color-grey);
@@ -133,4 +143,15 @@ li:hover #bar-level {
 	margin-right: 5px;
 	transform: rotate(135deg);
 	-webkit-transform: rotate(135deg);
+}
+
+@media (max-width: 1400px) {
+	.parent li a {
+		display: none;
+	}
+
+	.parent .home-button > a,
+	.parent .toggle-button > a {
+		display: block;
+	}
 }
