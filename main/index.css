@@ -164,7 +164,21 @@ li:hover #bar-level {
 		position: static;
 		box-shadow: none;
 		border-top: none;
-		/* border-bottom: 1px solid red; */
+		background-color: transparent;
+	}
+
+	.dropdown-menu > li {
+		border-bottom: 1px solid var(--color-grey);
+		width:  100%;
+	}
+
+	.dropdown-submenu {
+		background-color: transparent;
+		position: static;
+	}
+
+	.dropdown-submenu > h3 {
+		display: none;
 	}
 
 
