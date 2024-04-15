@@ -60,6 +60,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					}
 				})
 			}
+
+			//Testing dropdown-submenu
+			item.querySelectorAll(".test").forEach((submenu) => { 
+				submenu.addEventListener("click", (event) => {
+
+					event.stopPropagation()
+					event.preventDefault()
+
+					
+					let nextUl = submenu.nextElementSibling
+
+					nextUl.classList.toggle("show")
+				 })
+			 })
 		})
 	} else {
 		console.log("Couldn't find bar items")
@@ -67,32 +81,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 	// Show dropdown-submenu
 	// const dropdownLinks = document.querySelectorAll(".dropdown-menu a.test")
-	dropdownLinks.forEach(link => {
-		// link.classList.remove("show")
-		link.addEventListener("click", event => {
+	// dropdownLinks.forEach(link => {
+	// 	// link.classList.remove("show")
+	// 	link.addEventListener("click", event => {
 			
-			event.stopPropagation()
-			event.preventDefault()
+	// 		event.stopPropagation()
+	// 		event.preventDefault()
 
-			// Close opening sub-menu first
-			dropdownSubmenus.forEach(subMenu => {
-				if (subMenu.classList.contains("show")) {
-					subMenu.classList.remove("show")
-				}
-			})
+	// 		// Close opening sub-menu first
+	// 		dropdownSubmenus.forEach(subMenu => {
+	// 			if (subMenu.classList.contains("show")) {
+	// 				subMenu.classList.remove("show")
+	// 			}
+	// 		})
 
-			// Then active "dropdown-submenu"
-			let nextUl = link.nextElementSibling
+	// 		// Then active "dropdown-submenu"
+	// 		let nextUl = link.nextElementSibling
 			
-			console.log("nextUl", nextUl.classList.value);
+	// 		console.log("nextUl", nextUl.classList.value);
 
-			if (nextUl.classList.contains("show")) {
-				nextUl.classList.remove("show")
-			} else {
-				nextUl.classList.add("show")
-			}
-		})
-	})
+	// 		if (nextUl.classList.contains("show")) {
+	// 			nextUl.classList.remove("show")
+	// 		} else {
+	// 			nextUl.classList.add("show")
+	// 		}
+	// 	})
+	// })
 })
 
 // Close all document if user click away
