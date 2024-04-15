@@ -160,7 +160,7 @@ li:hover #bar-level {
 	}
 
 	.dropdown-menu {
-		display: block !important;
+		
 		position: static;
 		box-shadow: none;
 		border-top: none;
@@ -181,6 +181,10 @@ li:hover #bar-level {
 		display: none;
 	}
 
+	a#bar-level {
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
 
 	.parent .home-button > a,
 	.parent .toggle-button > a {
