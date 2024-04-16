@@ -7,11 +7,11 @@ const viewportWidth = window.innerWidth
 // Mobile version
 if (viewportWidth < 1400) {
 	document.querySelector("body").classList.add("mobile-version")
-	document.querySelector(".toggle-button").style.display = "none";
+	document.querySelector(".toggle-button").style.display = "none"
 } else {
 	document.querySelector("body").classList.remove("mobile-version")
 
-	document.querySelector(".open-button").style.display = "none";
+	document.querySelector(".open-button").style.display = "none"
 }
 console.log(document.querySelector("body").classList.value)
 
@@ -31,8 +31,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 	// Show Menu
 	if (barItems) {
-		
-
 		barItems.forEach(item => {
 			if (item.querySelector(".nav-item")) {
 				// Thẻ <a>
@@ -44,39 +42,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
 						activeDropdownMenu.classList.toggle("show")
 					})
 				}
-				item.addEventListener("click", (event) => {
-
-					event.stopPropagation()
-					event.preventDefault()
-
-					closeAllMenu()
-					
-					console.log("Clicked");
-					
+				item.addEventListener("click", event => {
 					const activeDropdownMenu = item.querySelector(".dropdown-menu")
+					
+					// event.stopPropagation()
+					// event.preventDefault()
 
-					if (activeDropdownMenu.classList.contains("show")) {
-						console.log("clearing");
-						activeDropdownMenu.classList.remove("show")
-					} else {
-						activeDropdownMenu.classList.add("show")
-					}
+					// closeAllMenu()
+
+					// activeDropdownMenu.classList.add("show")
+					console.log("Clicked")
+
+					activeDropdownMenu.classList.toggle("show");
+
+					// if (activeDropdownMenu.classList.contains("show")) {
+					// 	activeDropdownMenu.classList.remove("show")
+					// } else {
+					// 	activeDropdownMenu.classList.add("show")
+					// }
 				})
 			}
 
 			//Testing dropdown-submenu
-			item.querySelectorAll(".test").forEach((submenu) => { 
-				submenu.addEventListener("click", (event) => {
+			// console.log(item)
 
+			item.querySelectorAll(".dropdown-menu > li").forEach(i => {
+				i.addEventListener("click", event => {
 					event.stopPropagation()
 					event.preventDefault()
 
-
-					let nextUl = submenu.nextElementSibling
-
-					nextUl.classList.toggle("show")
-				 })
-			 })
+					i.querySelector(".dropdown-submenu").classList.toggle("show")
+				})
+			})
 		})
 	} else {
 		console.log("Couldn't find bar items")
@@ -87,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	// dropdownLinks.forEach(link => {
 	// 	// link.classList.remove("show")
 	// 	link.addEventListener("click", event => {
-			
+
 	// 		event.stopPropagation()
 	// 		event.preventDefault()
 
@@ -100,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 	// 		// Then active "dropdown-submenu"
 	// 		let nextUl = link.nextElementSibling
-			
+
 	// 		console.log("nextUl", nextUl.classList.value);
 
 	// 		if (nextUl.classList.contains("show")) {

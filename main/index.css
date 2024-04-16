@@ -161,7 +161,7 @@ li.close-button {
 @media (max-width: 1400px) {
 	li.open-button {
 		position: absolute;
-		left: 20px;
+		right: 20px;
 		padding: 15px;
 		display: none;
 	}
