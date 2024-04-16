@@ -22,7 +22,7 @@ body {
 	color: white;
 
 	display: grid;
-	grid-template-columns: 20rem 1fr;
+	grid-template-columns: 15rem 1fr;
     gap: 2rem;
 
     
@@ -32,7 +32,7 @@ nav {
     position: sticky;
     top: 0;
     max-height: 100svh;
-    border: 1px solid seashell;
+    /* border: 1px solid seashell; */
 
     background: var(--nav-bg);
 }
@@ -41,7 +41,7 @@ nav {
     display: grid;
     gap: 4rem;
     padding-block: 2rem;
-    font-size: 2rem;
+    /* font-size: 2rem; */
 
     margin: 0;
     list-style: none;
@@ -52,6 +52,7 @@ nav {
     background: lightgrey;
     padding: 1rem 2rem;
     margin-left: 2rem;
+    position: relative;
 
     border-radius: 100vw 0 0 100vw;
 }
@@ -63,4 +64,29 @@ nav {
 .nav-list li a {
     color: white;
     text-decoration: none;
+}
+
+.nav-list li.active::before,
+.nav-list li.active::after{
+    --border-radius: 0.3rem;
+
+    content: '';
+    
+    position: absolute;
+
+    background: var(--nav-bg);
+    width: var(--border-radius);
+    height: var(--border-radius);
+    right: 0;
+}
+
+.nav-list li.active::before {
+    top: calc(var(--border-radius) * -1);
+    box-shadow: 10px 10px 0 10px var(--body-bg);
+    border-radius: 0 0 100vw 0;
+}
+.nav-list li.active::after {
+    box-shadow: 10px -10px 0 10px var(--body-bg);
+    border-radius: 0 100vw 0 0;
+    bottom: calc(var(--border-radius) * -1)
 }
