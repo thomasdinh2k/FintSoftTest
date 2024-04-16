@@ -7,10 +7,11 @@ const viewportWidth = window.innerWidth
 // Mobile version
 if (viewportWidth < 1400) {
 	document.querySelector("body").classList.add("mobile-version")
+	document.querySelector(".toggle-button").style.display = "none";
 } else {
 	document.querySelector("body").classList.remove("mobile-version")
 
-	document.querySelector(".open-button").style.display = "none"
+	document.querySelector(".open-button").style.display = "none";
 }
 console.log(document.querySelector("body").classList.value)
 
