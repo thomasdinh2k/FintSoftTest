@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 						activeDropdownMenu.classList.toggle("show")
 					})
 				}
-				item.querySelector(".nav-item").addEventListener("click", (event) => {
+				item.addEventListener("click", (event) => {
 
 					event.stopPropagation()
 					event.preventDefault()
