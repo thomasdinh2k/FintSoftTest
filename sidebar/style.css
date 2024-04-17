@@ -1,7 +1,7 @@
 :root {
-	--nav-bg: rgb(62, 92, 115);
-	--body-bg: #123;
-    --primary-background: rgb(255, 255, 255);
+	--dark: rgb(62, 92, 115);
+	--black: #123;
+    --white: rgb(255, 255, 255);
 }
 
 /* Reset CSS */
@@ -21,7 +21,7 @@ html {
 body {
     min-height: 200vh;
 
-	background-color: var(--body-bg);
+	background-color: var(--black);
 	margin: 0;
 	font-size: 1.25rem;
 	color: white;
@@ -34,7 +34,7 @@ body {
 }
 
 .head {
-    height: 220px;
+    height: 120px;
     padding: 30px;
 }
 
@@ -42,20 +42,38 @@ nav {
     position: sticky;
     top: 0;
     max-height: 100svh;
-    /* border: 1px solid seashell; */
+    background: var(--white);
+}
 
-    background: var(--nav-bg);
+nav .head {
+    background: var(--white);
+    color: var(--dark);
+    
+    
+}
+
+.nav__menu {
+    /* background-color: red; */
+    margin: 10px;
+    border-top: 1px solid #cfcece;
 }
 
 .nav-list {
     display: grid;
     gap: 4rem;
-    padding-block: 2rem;
+    /* padding-block: 2rem; */
     /* font-size: 2rem; */
 
     margin: 0;
     list-style: none;
-    
+}
+
+.nav__menu-title {
+    padding: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #757575;
+    text-transform: uppercase;
 }
 
 .nav-list li {
@@ -64,39 +82,25 @@ nav {
     margin-left: 2rem;
     position: relative;
 
-    border-radius: 100vw 0 0 100vw;
+    border-radius: 10%;
 }
 
-.nav-list li.active {
-    background: var(--body-bg);
+.nav-list > li.active {
+    background: var(--black);
+}
+
+.nav-list > li.active > a {
+    color: var(--white);
 }
 
 .nav-list li a {
-    color: white;
+    color: var(--dark);
     text-decoration: none;
 }
 
-.nav-list li.active::before,
-.nav-list li.active::after{
-    --border-radius: 0.3rem;
 
-    content: '';
-    
-    position: absolute;
 
-    background: var(--nav-bg);
-    width: var(--border-radius);
-    height: var(--border-radius);
-    right: 0;
-}
-
-.nav-list li.active::before {
-    top: calc(var(--border-radius) * -1);
-    box-shadow: 10px 10px 0 10px var(--body-bg);
-    border-radius: 0 0 100vw 0;
-}
-.nav-list li.active::after {
-    box-shadow: 10px -10px 0 10px var(--body-bg);
-    border-radius: 0 100vw 0 0;
-    bottom: calc(var(--border-radius) * -1)
+/* Main document */
+main{
+    padding: 30px
 }
