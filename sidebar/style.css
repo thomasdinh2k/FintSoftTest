@@ -69,8 +69,7 @@ nav .head {
 }
 
 .nav-list li {
-    
-    padding: 1rem .3rem;
+    padding: .8rem .3rem;
     margin-left: 23px;
     position: relative;
     border-radius: 8px;
@@ -93,7 +92,7 @@ nav .head {
 
 .nav-list li {
     list-style: none;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 }
 
 .nav-list li a {
@@ -119,7 +118,75 @@ nav .head {
     flex-grow: 1;
 }
 
+.nav__list-submenu li{
+    display: none;
+    flex-direction: column;
+    gap: .35rem;
+}
+
+.show > li {
+    display: flex;
+}
+
+.nav__list-submenu li a {
+    /* background: lightgrey; */
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.nav__list-submenu li a:hover {
+    background: lightgrey;
+    color: rgba(36, 190, 9, 0.495)
+}
+
 /* Main document */
 main{
     padding: 30px
+}
+
+/* Arrow things */
+.arrow {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transition: all .35s;
+  }
+  
+  .right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  
+  .up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+  }
+  
+  .down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+
+
+button.nav-toggle {
+    position: absolute;
+    top: 45px;
+    left: 222px;
+    z-index: 1;
+    border-radius: 15px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: var(--white);
+}
+
+.nav-toggle .arrow {
+    border-width: 0 3px 3px 0;   
 }
