@@ -19,7 +19,7 @@ html {
 
 
 body {
-    min-height: 200vh;
+    /* min-height: 1000vh; */
 
 	background-color: var(--black);
 	margin: 0;
@@ -41,8 +41,10 @@ body {
 nav {
     position: sticky;
     top: 0;
-    max-height: 100svh;
-    background: var(--white);
+    min-height: 100svh;
+    background-color: var(--white);
+    /* height: 100%; */
+
 }
 
 nav .head {
@@ -111,7 +113,7 @@ nav .head {
 
 .nav-list > li:hover > a {
     /* background: antiquewhite; */
-    padding: 12px 8px;
+    padding: 0px 4px;
 }
 
 .nav__list-text {

@@ -1,55 +1,84 @@
 const navItems = [
-	{ name: "Home", icon: "fa-bookmark", subMenu: [] },
-	{ name: "About", icon: "fa-bookmark", subMenu: [] },
+	{ name: "Trang chủ", icon: "fa-solid fa-house", subMenu: [] },
+	{ name: "Giới thiệu", icon: "fa-solid fa-address-card", subMenu: [] },
 	{
-		name: "Blog",
-		icon: "blog.png",
+		name: "Thư viện",
+		icon: "fa-solid fa-square-rss",
 		subMenu: [
-			{ name: "Latest Posts", icon: "blog/latest.png" },
-			{ name: "Popular Articles", icon: "blog/popular.png" },
-			{ name: "Blog Series", icon: "blog/series.png" },
-			{ name: "Archives", icon: "blog/archives.png" },
+			{ name: "Bài mới nhất" },
+			{ name: "Bài nổi bật" },
+			{ name: "Blog Series" },
+			{ name: "Kho lưu trữ" },
+			{ name: "Bài không tên" },
 		],
 	},
 	{
-		name: "Finance",
-		icon: "finance.png",
+		name: "Tài chính",
+		icon: "fa-solid fa-coins",
 		subMenu: [
-			{ name: "Earning", icon: "finance/earning.png" },
-			{ name: "Investments", icon: "finance/investments.png" },
-			{ name: "Funds", icon: "finance/funds.png" },
-			{ name: "Declines", icon: "finance/declines.png" },
-			{ name: "Payouts", icon: "finance/payouts.png" },
-			{ name: "Reports", icon: "finance/reports.png" },
-			{ name: "Forecasts", icon: "finance/forecasts.png" },
+			{ name: "Thu nhập"},
+			{ name: "Đầu tư"},
+			{ name: "Quỹ"},
+			{ name: "Giảm trừ"},
+			{ name: "Thanh toán"},
+			{ name: "Báo cáo"},
+			{ name: "Dự báo"},
 		],
 	},
 	{
-		name: "Services",
-		icon: "services.png",
+		name: "Dịch vụ",
+		icon: "fa-brands fa-servicestack",
 		subMenu: [
-			{ name: "Consulting", icon: "services/consulting.png" },
-			{ name: "Customer Support", icon: "services/support.png" },
-			{ name: "Legal Advice", icon: "services/legal.png" },
-			{ name: "IT Services", icon: "services/it.png" },
-			{ name: "Accounting", icon: "services/accounting.png" },
+			{ name: "Consulting"},
+			{ name: "Customer Support"},
+			{ name: "Legal Advice"},
+			{ name: "IT Services"},
+			{ name: "Accounting"},
 		],
 	},
-	{ name: "Contact", icon: "contact.png", subMenu: [] },
-	{ name: "FAQ", icon: "faq.png", subMenu: [] },
-	{ name: "Terms of Service", icon: "terms.png", subMenu: [] },
-	{
-		name: "Settings",
-		icon: "settings.png",
-		subMenu: [
-			{ name: "Profile", icon: "settings/profile.png" },
-			{ name: "Account", icon: "settings/account.png" },
-			{ name: "Preferences", icon: "settings/preferences.png" },
-			{ name: "Privacy", icon: "settings/privacy.png" },
-		],
-	},
-	{ name: "Logout", icon: "logout.png", subMenu: [] },
+	{ name: "Liên hệ", icon: "fa-solid fa-phone", subMenu: [] },
+	{ name: "FAQ", icon: "fa-solid fa-circle-question", subMenu: [] },
 ]
+
+let navBarFinalHTML = ``
+
+navItems.forEach(item => {
+	let subMenuTag = ``
+
+	if (item.subMenu.length > 0) {
+		item.subMenu.forEach(menu => {
+			let temp = ""
+			temp += `<a href='#' > ${menu.name} </a>`
+			subMenuTag += temp
+		})
+	}
+
+	let finalSubMenuHTML = `<ul class="nav__list-submenu">
+                                <li>
+                                    ${subMenuTag}
+                                </li>
+                            </ul>`
+
+	navBarFinalHTML += `
+        <li class="nav__list-title">
+            <a href="#">
+                <i class="icon ${item.icon}"></i><span class="nav__list-text">${
+		item.name
+	}</span>${item.subMenu.length > 0 ? "<i class='arrow down'></i>" : ""}
+            </a>
+
+            ${finalSubMenuHTML}
+        </li>
+    `
+})
+
+
+console.log(navBarFinalHTML)
+
+let navList = document.querySelector(".nav-list")
+
+navList.innerHTML = navBarFinalHTML
+
 
 var navMenu = document.querySelector(".nav__menu")
 
