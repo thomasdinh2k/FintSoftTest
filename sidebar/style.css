@@ -60,12 +60,25 @@ nav .head {
 
 .nav-list {
     display: grid;
-    gap: 4rem;
+    gap: 10px 10px;
     /* padding-block: 2rem; */
     /* font-size: 2rem; */
 
     margin: 0;
     list-style: none;
+}
+
+.nav-list li {
+    
+    padding: 1rem 2rem;
+    margin-left: 23px;
+    position: relative;
+    /* border-radius: 10%; */
+}
+
+.nav__list-title:hover{
+    background: #f6f6f6;
+    /* padding: 12px 8px; */
 }
 
 .nav__menu-title {
@@ -76,27 +89,41 @@ nav .head {
     text-transform: uppercase;
 }
 
+
+
 .nav-list li {
-    background: lightgrey;
-    padding: 1rem 2rem;
-    margin-left: 2rem;
-    position: relative;
-
-    border-radius: 10%;
-}
-
-.nav-list > li.active {
-    background: var(--black);
-}
-
-.nav-list > li.active > a {
-    color: var(--white);
+    list-style: none;
+    margin-bottom: 5px;
 }
 
 .nav-list li a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 14px;
+    font-weight: 500;
     color: var(--dark);
     text-decoration: none;
+    /* padding: 12px 8px; */
+    border-radius: 8px;
+    transition: all 0.3s;
 }
+
+.nav-list > li:hover > a {
+    /* background: antiquewhite; */
+    padding: 12px 8px;
+}
+
+/* .nav-list > li.active {
+    background: var(--black);
+} */
+
+/* .nav-list > li.active > a {
+    color: var(--white);
+} */
+
+
 
 
 

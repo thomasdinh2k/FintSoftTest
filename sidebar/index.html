@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-        <meta name="view-transition" content="same-origin" />
+		<meta name="view-transition" content="same-origin" />
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
 
 		<script src="./script.js" defer></script>
-		<script src="https://kit.fontawesome.com/efe56c7eca.js" crossorigin="anonymous" defer></script>
-		
+		<script
+			src="https://kit.fontawesome.com/efe56c7eca.js"
+			crossorigin="anonymous"
+			defer
+		></script>
+
 		<title>Demo Left Sidebar</title>
 	</head>
 
@@ -22,29 +26,38 @@
 			<div class="nav__menu">
 				<p class="nav__menu-title">Main</p>
 				<ul class="nav-list">
-					<li class="active"  >
-						<a href="#">Home</a>
-						
+					<li class="nav__list-title active">
+						<a href="#">
+							<i class="icon fa-regular fa-bookmark"></i>Home</a>
 					</li>
-	
-					<li class="">
-						<a href="#">About</a>
+
+					<li class="nav__list-title">
+						<a href="#"><i class="fa-regular fa-bookmark"></i>About</a>
+						<ul class="nav__list-submenu">
+							<li>
+								<a href="">About 1 </a>
+								<a href="">About 1 </a>
+								<a href="">About 1 </a>
+							</li>
+						</ul>
 					</li>
-	
-					<li class="active">
-						<a href="#">Blog</a>
+
+					<li class="nav__list-title active">
+						<a href="#"><i class="fa-regular fa-bookmark"></i>Blog</a>
 					</li>
-	
-					<li class="">
-						<a href="#">Another</a>
+
+					<li class="nav__list-title ">
+						<a href="#"><i class="fa-regular fa-bookmark"></i>Another</a>
 					</li>
-	
-					<li class="">
-						<a href="#">Yet Another</a>
+
+					<li class="nav__list-title ">
+						<a href="#"><i class="fa-regular fa-bookmark"></i>Yet Another</a>
 					</li>
-	
-					<li class="">
-						<a href="#">Another Another</a>
+
+					<li class="nav__list-title ">
+						<a href="#"
+							><i class="fa-regular fa-bookmark"></i>Another Another</a
+						>
 					</li>
 				</ul>
 			</div>
