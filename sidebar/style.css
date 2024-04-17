@@ -70,10 +70,10 @@ nav .head {
 
 .nav-list li {
     
-    padding: 1rem 2rem;
+    padding: 1rem 0.3rem;
     margin-left: 23px;
     position: relative;
-    /* border-radius: 10%; */
+    border-radius: 8px;
 }
 
 .nav__list-title:hover{
