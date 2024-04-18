@@ -114,18 +114,14 @@ const turnArrow = (side, nav) => {
 // })
 
 $(document).ready(function () {
-	function removeOtherSubs() {
-		$(".nav__list-submenu").click(function (e) {
-			e.preventDefault()
-			$(this).removeClass("show");
-		})
-	}
 	
 	$(".nav__list-title").each(function () {
 		$(this).click(function (e) {
 			e.preventDefault()
-			removeOtherSubs()
+			
 			var subMenu = $(this).find(".nav__list-submenu")
+			// Close other subMenu
+			$(".nav__list-submenu").not(subMenu).removeClass("show");
 			subMenu.toggleClass("show")
 		})
 	})
