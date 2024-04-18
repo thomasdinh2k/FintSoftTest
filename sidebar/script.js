@@ -119,10 +119,13 @@ $(document).ready(function () {
 		$(this).click(function (e) {
 			e.preventDefault()
 			
-			var subMenu = $(this).find(".nav__list-submenu")
+			var subMenu = $(this).find(".nav__list-submenu > li");
+			
 			// Close other subMenu
-			$(".nav__list-submenu").not(subMenu).removeClass("show");
-			subMenu.toggleClass("show")
+			$(".nav__list-submenu > li").not(subMenu).slideUp();
+			
+			// subMenu.toggleClass("show");
+			subMenu.slideToggle();
 		})
 	})
 })
