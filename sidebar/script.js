@@ -67,7 +67,8 @@ navItems.forEach(item => {
 	}</span>${item.subMenu.length > 0 ? "<i class='arrow down'></i>" : ""}
             </a>
 
-            ${finalSubMenuHTML}
+            
+			${ item.subMenu.length > 0 ? finalSubMenuHTML : ''}
         </li>
     `
 })
@@ -96,20 +97,60 @@ const turnArrow = (side, nav) => {
 
 const navBar = document.querySelectorAll(".nav__list-title")
 
-navBar.forEach(element => {
-	element.addEventListener("click", e => {
-		e.preventDefault()
+// navBar.forEach(element => {
+// 	element.addEventListener("click", e => {
+// 		e.preventDefault()
 
-		var subMenu = element.querySelector(".nav__list-submenu")
+// 		var subMenu = element.querySelector(".nav__list-submenu")
 
-		if (!subMenu.classList.contains("show")) {
-			// Show Sub-menu
-			turnArrow("up", element)
-			element.querySelector(".nav__list-submenu").classList.add("show")
+// 		if (!subMenu.classList.contains("show")) {
+// 			// Show Sub-menu
+// 			turnArrow("up", element)
+// 			element.querySelector(".nav__list-submenu").classList.add("show")
+// 		} else {
+// 			// Hide Sub-menu
+// 			turnArrow("down", element)
+// 			element.querySelector(".nav__list-submenu").classList.remove("show")
+// 		}
+// 	})
+// })
+
+
+// $(document).ready(() => { 
+	
+// 	$(".nav__list-title").click(() => { 
+// 		$(".nav__list-submenu").toggleClass("show");
+// 	 })
+
+
+//  })
+
+$(document).ready(function () {
+	var turnArrow = function (side, nav) {
+		var arrow_icon = $(nav).find(".arrow")
+
+		if (side === "up") {
+			arrow_icon.removeClass("down").addClass("up")
 		} else {
-			// Hide Sub-menu
-			turnArrow("down", element)
-			element.querySelector(".nav__list-submenu").classList.remove("show")
+			arrow_icon.removeClass("up").addClass("down")
 		}
+	}
+
+	$(".nav__list-title").each(function () {
+		$(this).click(function (e) {
+			e.preventDefault()
+
+			var subMenu = $(this).find(".nav__list-submenu")
+
+			if (!subMenu.hasClass("show")) {
+				// Show Sub-menu
+				turnArrow("up", this)
+				subMenu.addClass("show")
+			} else {
+				// Hide Sub-menu
+				turnArrow("down", this)
+				subMenu.removeClass("show")
+			}
+		})
 	})
 })
