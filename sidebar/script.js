@@ -16,24 +16,24 @@ const navItems = [
 		name: "Tài chính",
 		icon: "fa-solid fa-coins",
 		subMenu: [
-			{ name: "Thu nhập"},
-			{ name: "Đầu tư"},
-			{ name: "Quỹ"},
-			{ name: "Giảm trừ"},
-			{ name: "Thanh toán"},
-			{ name: "Báo cáo"},
-			{ name: "Dự báo"},
+			{ name: "Thu nhập" },
+			{ name: "Đầu tư" },
+			{ name: "Quỹ" },
+			{ name: "Giảm trừ" },
+			{ name: "Thanh toán" },
+			{ name: "Báo cáo" },
+			{ name: "Dự báo" },
 		],
 	},
 	{
 		name: "Dịch vụ",
 		icon: "fa-brands fa-servicestack",
 		subMenu: [
-			{ name: "Consulting"},
-			{ name: "Customer Support"},
-			{ name: "Legal Advice"},
-			{ name: "IT Services"},
-			{ name: "Accounting"},
+			{ name: "Consulting" },
+			{ name: "Customer Support" },
+			{ name: "Legal Advice" },
+			{ name: "IT Services" },
+			{ name: "Accounting" },
 		],
 	},
 	{ name: "Liên hệ", icon: "fa-solid fa-phone", subMenu: [] },
@@ -93,39 +93,30 @@ const turnArrow = (side, nav) => {
 	}
 }
 
-// const navBar = document.querySelectorAll(".nav__list-title")
-
-// navBar.forEach(element => {
-// 	element.addEventListener("click", e => {
-// 		e.preventDefault()
-
-// 		var subMenu = element.querySelector(".nav__list-submenu")
-
-// 		if (!subMenu.classList.contains("show")) {
-// 			// Show Sub-menu
-// 			turnArrow("up", element)
-// 			element.querySelector(".nav__list-submenu").classList.add("show")
-// 		} else {
-// 			// Hide Sub-menu
-// 			turnArrow("down", element)
-// 			element.querySelector(".nav__list-submenu").classList.remove("show")
-// 		}
-// 	})
-// })
-
 $(document).ready(function () {
-	
+	var turnArrow = function (nav) {
+		// nav = .nav__list-title
+
+		// Reset all the arrow first
+		$(".arrow").removeClass("up").addClass("down");
+		
+		var arrow_icon = $(nav).find(".arrow")
+		arrow_icon.toggleClass(["up", "down"]);
+	}
+
 	$(".nav__list-title").each(function () {
 		$(this).click(function (e) {
 			e.preventDefault()
-			
-			var subMenu = $(this).find(".nav__list-submenu > li");
-			
+
+			var subMenu = $(this).find(".nav__list-submenu > li")
+
 			// Close other subMenu
-			$(".nav__list-submenu > li").not(subMenu).slideUp();
-			
+			$(".nav__list-submenu > li").not(subMenu).slideUp()
+
+			turnArrow(this)
+
 			// subMenu.toggleClass("show");
-			subMenu.slideToggle();
+			subMenu.slideToggle()
 		})
 	})
 })
