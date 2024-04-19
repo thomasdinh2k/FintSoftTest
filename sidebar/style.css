@@ -2,7 +2,7 @@
 	--dark: rgb(62, 92, 115);
 	--black: #123;
 	--white: rgb(255, 255, 255);
-	--menu: #dedede;
+	--menu: #e8e5e5;
 }
 
 /* Reset CSS */
@@ -86,6 +86,14 @@ nav .head {
 	background: var(--menu);
 
 	/* padding: 12px 8px; */
+}
+
+
+.nav__list-title a i {
+    /* transition: all 10s;   */
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .75s ease;
 }
 
 .nav__menu-title {
@@ -256,4 +264,8 @@ nav.mini .nav__list-title:hover {
 	background: transparent;
 
 	/* padding: 12px 8px; */
+}
+
+nav.mini .nav__list-title a i {
+    font-size: 25px;
 }
