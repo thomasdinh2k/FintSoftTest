@@ -100,8 +100,15 @@ $(document).ready(function () {
 		// Reset all the arrow first
 		$(".arrow").removeClass("up").addClass("down");
 		
+		// jquery check if style of nav__list-submenu is none or not?
 		var arrow_icon = $(nav).find(".arrow")
-		arrow_icon.toggleClass(["up", "down"]);
+		var subMenu = $(nav).find(".nav__list-submenu > li")
+
+		if (subMenu.css("display") !== "none") {
+			arrow_icon.removeClass("up").addClass("down")
+		} else {
+			arrow_icon.removeClass("down").addClass("up")
+		}
 	}
 
 	$(".nav__list-title").each(function () {
@@ -119,4 +126,26 @@ $(document).ready(function () {
 			subMenu.slideToggle()
 		})
 	})
+
+
+	$(".nav-toggle").click(function (e) { 
+		
+		
+		e.preventDefault();
+		
+		const nav = $("nav")
+
+		
+		if (nav.hasClass("mini")) {
+			// Make the bar full
+			nav.removeClass("mini");
+			// $(".nav-toggle").removeClass("off");
+			// $(".nav-toggle > .arrow").removeClass("left").addClass("right")
+		} else {
+			// Show nav-bar
+			nav.addClass("mini");
+			// $(".nav-toggle").addClass("off");
+			// $(".nav-toggle > .arrow").removeClass("right").addClass("left")
+		}
+	});
 })
