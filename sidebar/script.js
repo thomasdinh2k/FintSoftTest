@@ -82,7 +82,7 @@ navList.innerHTML = navBarFinalHTML
 var navMenu = document.querySelector(".nav__menu")
 
 const turnArrow = (side, nav) => {
-	var arrow_icon = nav.querySelector(".arrow")
+	var arrow_icon = nav.querySelector(".nav__menu.arrow")
 
 	if (side == "up") {
 		arrow_icon.classList.remove("down")
@@ -98,10 +98,10 @@ $(document).ready(function () {
 		// nav = .nav__list-title
 
 		// Reset all the arrow first
-		$(".arrow").removeClass("up").addClass("down");
+		$(".nav__menu.arrow").removeClass("up").addClass("down")
 		
 		// jquery check if style of nav__list-submenu is none or not?
-		var arrow_icon = $(nav).find(".arrow")
+		var arrow_icon = $(nav).find(".nav__menu.arrow")
 		var subMenu = $(nav).find(".nav__list-submenu > li")
 
 		if (subMenu.css("display") !== "none") {
