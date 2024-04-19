@@ -101,7 +101,7 @@ $(document).ready(function () {
 		$(".nav__menu.arrow").removeClass("up").addClass("down")
 		
 		// jquery check if style of nav__list-submenu is none or not?
-		var arrow_icon = $(nav).find(".nav__menu.arrow")
+		var arrow_icon = $(nav).find(".arrow")
 		var subMenu = $(nav).find(".nav__list-submenu > li")
 
 		if (subMenu.css("display") !== "none") {
