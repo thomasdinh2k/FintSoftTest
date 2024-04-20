@@ -1,46 +1,7 @@
-const navItems = [
-	{ name: "Trang chủ", icon: "fa-solid fa-house", subMenu: [] },
-	{ name: "Giới thiệu", icon: "fa-solid fa-address-card", subMenu: [] },
-	{
-		name: "Thư viện",
-		icon: "fa-solid fa-square-rss",
-		subMenu: [
-			{ name: "Bài mới nhất" },
-			{ name: "Bài nổi bật" },
-			{ name: "Blog Series" },
-			{ name: "Kho lưu trữ" },
-			{ name: "Bài không tên" },
-		],
-	},
-	{
-		name: "Tài chính",
-		icon: "fa-solid fa-coins",
-		subMenu: [
-			{ name: "Thu nhập" },
-			{ name: "Đầu tư" },
-			{ name: "Quỹ" },
-			{ name: "Giảm trừ" },
-			{ name: "Thanh toán" },
-			{ name: "Báo cáo" },
-			{ name: "Dự báo" },
-		],
-	},
-	{
-		name: "Dịch vụ",
-		icon: "fa-brands fa-servicestack",
-		subMenu: [
-			{ name: "Consulting" },
-			{ name: "Customer Support" },
-			{ name: "Legal Advice" },
-			{ name: "IT Services" },
-			{ name: "Accounting" },
-		],
-	},
-	{ name: "Liên hệ", icon: "fa-solid fa-phone", subMenu: [] },
-	{ name: "FAQ", icon: "fa-solid fa-circle-question", subMenu: [] },
-]
+import navItems from './navItem.json' with {type: 'json'}
 
-let navBarFinalHTML = ``
+console.log(navItems);
+let navBarFinalHTML
 
 navItems.forEach(item => {
 	let subMenuTag = ``
@@ -99,7 +60,7 @@ $(document).ready(function () {
 
 		// Reset all the arrow first
 		$(".nav__menu.arrow").removeClass("up").addClass("down")
-		
+
 		// jquery check if style of nav__list-submenu is none or not?
 		var arrow_icon = $(nav).find(".arrow")
 		var subMenu = $(nav).find(".nav__list-submenu > li")
@@ -127,28 +88,23 @@ $(document).ready(function () {
 		})
 	})
 
+	$(".nav-toggle").click(function (e) {
+		e.preventDefault()
 
-	$(".nav-toggle").click(function (e) { 
-		
-		
-		e.preventDefault();
-		
 		const nav = $("nav")
 
-		
 		if (nav.hasClass("closed")) {
 			// Make the bar full
-			nav.removeClass("closed");
+			nav.removeClass("closed")
 
 			// $(".nav-toggle").removeClass("off");
 			$(".nav-toggle > .arrow").removeClass("right").addClass("left")
 		} else {
 			// Show nav-bar
-			nav.addClass("closed");
-			
-			
+			nav.addClass("closed")
+
 			$(".nav-toggle > .arrow").removeClass("left").addClass("right")
 			// $(".nav-toggle").addClass("off");
 		}
-	});
+	})
 })
