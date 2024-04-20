@@ -191,7 +191,8 @@ main {
 .nav-toggle {
 	position: absolute;
 	top: 11%;
-	right: -20px;
+	/* right: 300px; */
+    right: -20px;
 	z-index: 100;
 	border-radius: 90%;
 	width: 35px;
@@ -205,7 +206,21 @@ main {
 	cursor: pointer;
 	pointer-events: auto;
 
-	transition: all 0.3s;
+	transition: all 0.5s;
+}
+
+nav.closed .nav-toggle {
+    left: 333px;
+    width: 80px;
+    height: 80px;
+}
+
+.nav-toggle.active {
+    left:0;
+}
+
+nav.closed{
+    margin-left: -300px;
 }
 
 .nav-toggle:hover {
@@ -225,7 +240,7 @@ main {
 
 /* Mini version */
 nav.mini {
-	width: 100px;
+	width: 0;
 }
 
 nav.mini .arrow.left {

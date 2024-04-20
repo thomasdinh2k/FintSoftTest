@@ -136,16 +136,19 @@ $(document).ready(function () {
 		const nav = $("nav")
 
 		
-		if (nav.hasClass("mini")) {
+		if (nav.hasClass("closed")) {
 			// Make the bar full
-			nav.removeClass("mini");
+			nav.removeClass("closed");
+
 			// $(".nav-toggle").removeClass("off");
-			// $(".nav-toggle > .arrow").removeClass("left").addClass("right")
+			$(".nav-toggle > .arrow").removeClass("right").addClass("left")
 		} else {
 			// Show nav-bar
-			nav.addClass("mini");
+			nav.addClass("closed");
+			
+			
+			$(".nav-toggle > .arrow").removeClass("left").addClass("right")
 			// $(".nav-toggle").addClass("off");
-			// $(".nav-toggle > .arrow").removeClass("right").addClass("left")
 		}
 	});
 })
