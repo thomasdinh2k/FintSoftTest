@@ -1,6 +1,16 @@
-import navItems from './navItem.json' with {type: 'json'}
+async function getData() {
+	const respond = await fetch(
+		"https://thomasdinh2k.github.io/Sidebar-JSON/navItem.json"
+	)
 
-console.log(navItems);
+	const data = await respond.json();
+	console.log(data);
+	return data
+}
+
+const navItems = await getData();
+
+// console.log(navItems);
 let navBarFinalHTML
 
 navItems.forEach(item => {
