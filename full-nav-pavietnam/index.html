@@ -14,6 +14,7 @@
     <!-- Normal CSS Import -->
     <link rel="stylesheet" href="style.css">
     <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./script.js" defer></script>
     <title>Full Nav-bar</title>
 </head>
@@ -26,6 +27,28 @@
         <ul class="menu">
             <li>
                 <a href="#">tên miền  <span class="arrow down"></span></a>
+                <ul class="sub-menu">
+                    <div class="sub-menu__links">
+                        <ul class="sub-menu__col">
+                            <a href="#">tên miền</a>
+                            <li>đăng ký tên miền <span class="caption">Đừng kinh doanh khi chưa có tên miền</span></li>
+                            <li>bảng giá tên miền<span class="caption">Đừng kinh doanh khi chưa có tên miền</span></li>
+                            <li>chuyển tên miền về P.A<span class="caption">Đừng kinh doanh khi chưa có tên miền</span></li>
+                        </ul>
+                        
+                        <ul class="sub-menu__col">
+                            <a href="#">tiếp thị số</a>
+                            <li>bộ tiếp thị kỹ thuật số<span class="caption">Chữ ký số dành cho người ngố</span></li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu__picutre">
+                        <img src="https://i.pinimg.com/564x/3a/39/1e/3a391e27fd358e4eb49001c27d39d845.jpg" alt="description picture">
+                    </div>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#">web & hosting <span class="arrow down"></span></a>
                 <ul class="sub-menu">
                     <div class="sub-menu__links">
                         <ul class="sub-menu__col">
@@ -53,26 +76,146 @@
                             <a href="#">tiếp thị số</a>
                             <li>bộ tiếp thị kỹ thuật số<span class="caption">Chữ ký số dành cho người ngố</span></li>
                         </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">tiếp thị số</a>
+                            <li>bộ tiếp thị kỹ thuật số<span class="caption">Chữ ký số dành cho người ngố</span></li>
+                        </ul>
                     </div>
                     <div class="sub-menu__picutre">
-                        <img src="https://www.pavietnam.vn/images/home_version_new/img-menu-domain-vn-v1.jpg" alt="description picture">
+                        <img src="https://i.pinimg.com/564x/11/66/a0/1166a0200d1b5a3fe558160d7d205327.jpg" alt="description picture">
                     </div>
                 </ul>
             </li>
+            
             <li>
-                <a href="#">web & hosting <span class="arrow down"></span></a>
+                <a href="#">Tiếp thị qua Email <span class="arrow down"></span></a>
+                <ul class="sub-menu">
+                    <div class="sub-menu__links">
+                        <ul class="sub-menu__col">
+                            <a href="#">Dịch vụ Email</a>
+                            <li>Chữ ký email <span class="caption">Email doanh nghiệp chuyên nghiệp</span></li>
+                            <li>Chữ ký số email <span class="caption">Email doanh nghiệp chuyên nghiệp</span></li>
+                            <li>Quản trị số email <span class="caption">Email doanh nghiệp chuyên nghiệp</span></li>
+                            <li>Bảo mật & bảo vệ email <span class="caption">Email doanh nghiệp chuyên nghiệp</span></li>
+                            <li>Sao lưu dữ liệu email <span class="caption">Email doanh nghiệp chuyên nghiệp</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Chiến dịch</a>
+                            <li>Tạo và quản lý chiến dịch <span class="caption">Phát triển chiến dịch tiếp thị hiệu quả</span></li>
+                            <li>Phân tích hiệu suất chiến dịch <span class="caption">Theo dõi và đánh giá kết quả</span></li>
+                            <li>Tự động hóa tiếp thị <span class="caption">Tự động hóa và cá nhân hóa thông điệp</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Công cụ & Tích hợp</a>
+                            <li>Integration with CRM systems <span class="caption">Kết nối dễ dàng với hệ thống CRM</span></li>
+                            <li>Các công cụ thiết kế email <span class="caption">Tạo email hấp dẫn với công cụ kéo thả</span></li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu__picture">
+                        <img src="https://i.pinimg.com/736x/90/ca/a7/90caa7b281202b550466b6f5ab5cd4a3.jpg" alt="description picture">
+                    </div>
+                </ul>
             </li>
+            
+
+            
             <li>
-                <a href="#">email & marketing <span class="arrow down"></span></a>
+                <a href="#">Hóa đơn & Báo cáo <span class="arrow down"></span></a>
+                <ul class="sub-menu">
+                    <div class="sub-menu__links">
+                        <ul class="sub-menu__col">
+                            <a href="#">Quản lý Hóa đơn</a>
+                            <li>Tạo hóa đơn <span class="caption">Tạo hóa đơn tự động và nhanh chóng</span></li>
+                            <li>Quản lý nợ phải thu <span class="caption">Theo dõi các khoản nợ và thanh toán</span></li>
+                            <li>Theo dõi thanh toán <span class="caption">Quản lý và theo dõi các khoản thanh toán</span></li>
+                            <li>Phân tích dòng tiền <span class="caption">Phân tích dòng tiền để tối ưu hóa ngân sách</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Báo cáo Tài chính</a>
+                            <li>Báo cáo thu nhập <span class="caption">Cung cấp báo cáo chi tiết về thu nhập</span></li>
+                            <li>Báo cáo chi tiêu <span class="caption">Theo dõi và báo cáo chi tiêu doanh nghiệp</span></li>
+                            <li>Báo cáo nợ phải trả <span class="caption">Chi tiết các khoản nợ phải trả</span></li>
+                            <li>Báo cáo thuế <span class="caption">Chuẩn bị và quản lý báo cáo thuế</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Phân tích & Dự báo</a>
+                            <li>Dự báo tài chính <span class="caption">Dự đoán và lập kế hoạch tài chính tương lai</span></li>
+                            <li>Phân tích chi phí <span class="caption">Phân tích chi phí để cắt giảm và tối ưu hóa</span></li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu__picture">
+                        <img src="https://i.pinimg.com/564x/11/66/a0/1166a0200d1b5a3fe558160d7d205327.jpg" alt="description picture">
+                    </div>
+                </ul>
             </li>
+            
             <li>
-                <a href="#">tổng đài & hóa đơn <span class="arrow down"></span></a>
+                <a href="#">SSL & Bảo mật <span class="arrow down"></span></a>
+                <ul class="sub-menu">
+                    <div class="sub-menu__links">
+                        <ul class="sub-menu__col">
+                            <a href="#">SSL</a>
+                            <li>Chứng chỉ SSL <span class="caption">Bảo mật kết nối và thông tin</span></li>
+                            <li>SSL cho doanh nghiệp <span class="caption">SSL cao cấp cho các nhu cầu doanh nghiệp</span></li>
+                            <li>SSL nhiều miền <span class="caption">Bảo vệ nhiều miền và phụ miền</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Bảo mật Web</a>
+                            <li>Firewall cho website <span class="caption">Bảo vệ website khỏi các mối đe dọa</span></li>
+                            <li>Dò tìm malware <span class="caption">Quét và loại bỏ malware</span></li>
+                            <li>Phòng chống DDoS <span class="caption">Biện pháp bảo vệ chống lại các cuộc tấn công DDoS</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Bảo mật Email</a>
+                            <li>Mã hóa Email <span class="caption">Bảo vệ thông tin cá nhân và doanh nghiệp</span></li>
+                            <li>Phòng chống spam <span class="caption">Lọc và ngăn chặn thư rác</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Bảo mật Dữ liệu</a>
+                            <li>Mã hóa dữ liệu <span class="caption">Mã hóa dữ liệu lưu trữ và truyền tải</span></li>
+                            <li>Bảo mật đám mây <span class="caption">Các giải pháp bảo mật cho lưu trữ đám mây</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Quản lý Truy cập</a>
+                            <li>Định danh và quản lý truy cập <span class="caption">Quản lý quyền truy cập người dùng</span></li>
+                            <li>Đa yếu tố xác thực <span class="caption">Tăng cường bảo mật với xác thực nhiều lớp</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Tư vấn Bảo mật</a>
+                            <li>Đánh giá bảo mật <span class="caption">Đánh giá và cải thiện các biện pháp bảo mật</span></li>
+                            <li>Chiến lược bảo mật <span class="caption">Phát triển chiến lược bảo mật toàn diện</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Chứng thực và Chứng chỉ</a>
+                            <li>Quản lý chứng chỉ <span class="caption">Giải pháp quản lý chứng chỉ an toàn</span></li>
+                            <li>Chứng thực mạnh <span class="caption">Chứng thực mạnh cho các hệ thống nhạy cảm</span></li>
+                        </ul>
+                        <ul class="sub-menu__col">
+                            <a href="#">Kiểm soát và Giám sát</a>
+                            <li>Giám sát an ninh mạng <span class="caption">Theo dõi và phản ứng trước các mối đe dọa an ninh</span></li>
+                            <li>Kiểm soát truy nhập <span class="caption">Giải pháp kiểm soát truy nhập hiện đại</span></li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu__picture">
+                        <img src="https://i.pinimg.com/564x/db/ee/82/dbee82281c953cf775fd3ec339fc7a87.jpg" alt="description picture">
+                    </div>
+                </ul>
             </li>
-            <li>
-                <a href="#">SSL & bảo mật <span class="arrow down"></span></a>
-            </li>
+            
             <li>
                 <a href="#">License <span class="arrow down"></span></a>
+
+                <ul class="sub-menu">
+                    <div class="sub-menu__links">
+                        <ul class="sub-menu__col">
+                            <a href="#">License số</a>
+                            <li>bộ tiếp thị kỹ thuật số<span class="caption">Chữ ký số dành cho người ngố</span></li>
+                        </ul>
+                    </div>
+                    <div class="sub-menu__picutre">
+                        <img src="https://i.pinimg.com/564x/4a/af/c1/4aafc1162575ca13c221b85c291e05c0.jpg" alt="description picture">
+                    </div>
+                </ul>
             </li>
         </ul>
     </nav>
