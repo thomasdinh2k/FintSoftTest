@@ -95,16 +95,19 @@ nav {
     border-top: 2px solid var(--site-red);
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 
-	display: flex;
+	display: none;
     justify-content: space-between;
 }
 
-
+.sub-menu.show {
+	display: flex;
+}
 
 .sub-menu__links {
     display: grid;
     grid-template-columns: 1fr 1fr;
     row-gap: 40px;
+	flex-grow: 1;
 }
 
 .sub-menu ul {
@@ -143,4 +146,9 @@ nav {
 
 .sub-menu__col > li:hover {
     color: var(--site-red);
+}
+
+.sub-menu__picutre img {
+	width: 400px;
+	height: 400px;
 }
