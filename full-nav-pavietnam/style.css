@@ -1,3 +1,7 @@
+:root {
+    --site-red: #db1a5b;
+}
+
 html {
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
 		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
@@ -10,7 +14,15 @@ nav {
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
 }
 .logo {
+    display: flex;
 	justify-self: center;
+}
+
+.logo span {
+    display: block;
+    /* position: absolute; */
+    font-size: .7em;
+    font-weight: 300;
 }
 
 .menu {
@@ -26,6 +38,17 @@ nav {
 	font-weight: 500;
 	font-size: 13px;
 	text-decoration: none;
+    
+    padding: 10px;
+    border-radius: 15px;
+    
+    transition: all .3s;
+}
+
+.menu li a:hover {
+    background-color: var(--site-red);
+    color: white;
+    border-radius: 15px;
 }
 
 /* Arrow things */
@@ -61,19 +84,22 @@ nav {
 
 /* Sub-Menu */
 .sub-menu {
-	background-color: rgba(250, 128, 114, 0.479);
+	/* background-color: rgba(250, 128, 114, 0.479); */
 	position: absolute;
 	/* padding: 241px 541px; Remove Later */
 
 	padding: 20px 15px;
-	top: 75px;
+	top: 94px;
 	left: 100px;
     right: 100px;
-    border-top: 3px solid red;
+    border-top: 2px solid var(--site-red);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 
 	display: flex;
     justify-content: space-between;
 }
+
+
 
 .sub-menu__links {
     display: grid;
@@ -87,20 +113,34 @@ nav {
 }
 
 .sub-menu__links > .sub-menu__col > a {
-	font-weight: bolder;
+    font-weight: bolder;
     width: 275px;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid #ccc;
     display: block;
     padding-block: 10px;
+    border-radius: 0;
+    padding: 10px 0;
+}
+
+.sub-menu__links > .sub-menu__col:hover a {
+    color: red;
+    /* Reset outer-scope */
+    background-color: transparent;
+    border-radius: 0;
+    font-size: .9em;
 }
 
 .caption {
     display: block;
-    font-size: .75em;
+    font-size: .55em;
     color:grey;
     text-transform: none;
 }
 
 .sub-menu__links > .sub-menu__col > li {
     padding-top: 15px;
+}
+
+.sub-menu__col > li:hover {
+    color: var(--site-red);
 }
