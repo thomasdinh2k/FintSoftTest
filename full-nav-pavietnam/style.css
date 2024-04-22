@@ -65,11 +65,20 @@ nav {
 	position: absolute;
 	/* padding: 241px 541px; Remove Later */
 
-	padding: 8px 12px;
+	padding: 20px 15px;
 	top: 75px;
-	left: 300px;
+	left: 100px;
+    right: 100px;
+    border-top: 3px solid red;
 
 	display: flex;
+    justify-content: space-between;
+}
+
+.sub-menu__links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 40px;
 }
 
 .sub-menu ul {
@@ -77,6 +86,21 @@ nav {
 	text-transform: capitalize;
 }
 
-.sub-menu > .sub-menu__col > a {
+.sub-menu__links > .sub-menu__col > a {
 	font-weight: bolder;
+    width: 275px;
+    border-bottom: 2px solid black;
+    display: block;
+    padding-block: 10px;
+}
+
+.caption {
+    display: block;
+    font-size: .75em;
+    color:grey;
+    text-transform: none;
+}
+
+.sub-menu__links > .sub-menu__col > li {
+    padding-top: 15px;
 }
