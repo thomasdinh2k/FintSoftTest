@@ -128,7 +128,7 @@ nav {
 	background-color: whitesmoke;
 	/* position: absolute; */
 	/* padding: 241px 541px; Remove Later */
-	/* z-index: -1; */
+	
 	padding: 20px 15px;
 	margin-top: 25px;
 	display: flex;
@@ -140,6 +140,7 @@ nav {
 }
 
 .wrapper {
+	z-index: 2;
 	display: none;
 	position: absolute;
 	top: 55px;
@@ -253,4 +254,27 @@ nav {
 	to{
 		transform: translateX(0);
 	}
+}
+
+/* Hall of fame */
+.hall-of-fame {
+	position: absolute;
+	display: flex;
+	top: 80px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1;
+	padding: 8px;
+	background-color: rgb(181, 227, 42);
+	align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+	font-weight: bold;
+}
+
+.hall-of-fame img {
+	width: 40px;
+	height: 40px;
+	filter: gray saturate(0%) brightness(70%) contrast(100%)
+	opacity(1)
 }
