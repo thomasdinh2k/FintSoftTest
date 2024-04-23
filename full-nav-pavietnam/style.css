@@ -201,9 +201,9 @@ nav {
 	color: var(--site-red);
 }
 
-.sub-menu__picutre img {
-	width: 400px;
-	height: 400px;
+.sub-menu__picture img {
+	max-width: 300px;
+	max-height: 300px;
 }
 
 /* Animation */
