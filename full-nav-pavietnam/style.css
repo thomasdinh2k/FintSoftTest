@@ -7,6 +7,10 @@ html {
 		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 nav {
 	/* background-color: aliceblue; */
 	display: grid;
@@ -164,4 +168,53 @@ nav {
 .sub-menu__picutre img {
 	width: 400px;
 	height: 400px;
+}
+
+/* Animation */
+
+
+.nav-links { /* Correct selector */
+	/* background-color: aliceblue; */
+	display: inline-block; /* using in-line block because <a> tag itself can't be transform */
+	list-style: none;
+	transform: translateX(1000px); /* Making this disappeared */
+	animation: slideIn 1s forwards;
+	color: black;
+}
+
+/* nav .menu li .wrapper {
+	position: absolute;
+	transform: translateX(-1000px);
+	animation: none;
+} */
+
+/* .container > .nav-links:nth-of-type(1) { */
+
+.menu li:nth-child(1) .nav-links {
+	animation-delay: 0s;
+}
+.menu li:nth-child(2) .nav-links {
+	animation-delay: calc(0.15 * 1s);
+	
+}
+.menu li:nth-child(3) .nav-links {
+	animation-delay: calc(0.15 * 2s);
+}
+.menu li:nth-child(4) .nav-links {
+	animation-delay: calc(0.15 * 3s);
+}
+.menu li:nth-child(5) .nav-links {
+	animation-delay: calc(0.15 * 4s);
+}
+.menu li:nth-child(6) .nav-links {
+	animation-delay: calc(0.15 * 5s);
+}
+
+@keyframes slideIn {
+	from{
+
+	}
+	to{
+		transform: translateX(0);
+	}
 }
