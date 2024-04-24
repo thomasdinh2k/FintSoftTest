@@ -277,15 +277,6 @@ nav {
 	animation: slideIn 1s forwards;
 	color: black;
 }
-
-/* nav .menu li .wrapper {
-	position: absolute;
-	transform: translateX(-1000px);
-	animation: none;
-} */
-
-/* .container > .nav-links:nth-of-type(1) { */
-
 .menu li:nth-child(1) .nav-links {
 	animation-delay: 0s;
 }
@@ -329,14 +320,14 @@ nav {
 	}
 }
 
-/* @keyframes slideDownSubs {
-	from {
-
-	}
-	to {
-		transform: translateY(0);
-	}
-} */
+@keyframes BlackenElement {
+    from {
+       
+    }
+    to {
+		filter: brightness(0);
+    }
+}
 
 
 @keyframes slideDownSubs {
@@ -439,12 +430,16 @@ nav {
 	width: 100%;
 	position: relative;
 	overflow: hidden;
+	transform: translateX(1000px); /* Making this disappeared */
+	display: flex;
+	justify-content: center;
+	animation: slideIn 1s 1.45s forwards;
 }
 
 .sponsored img {
-	width: 100%;
+	width: 30%;
 	height: 100%;
 	object-fit: cover;
 	position: absolute;
-	filter: brightness(0);
+	animation: BlackenElement 1.6s 2.75s forwards;
 }
