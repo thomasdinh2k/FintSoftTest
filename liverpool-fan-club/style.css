@@ -56,7 +56,7 @@ nav {
 	/* background-color: aliceblue; */
 	background: white;
 	display: grid;
-	grid-template-columns: 1fr 7fr 1fr;
+	grid-template-columns: 2fr 7fr 1fr;
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
 	position: relative;
 	/* z-index: 200; */
@@ -64,6 +64,7 @@ nav {
 .logo {
 	display: flex;
 	justify-self: center;
+	align-items: center;
 }
 
 .logo span {
@@ -71,6 +72,14 @@ nav {
 	/* position: absolute; */
 	font-size: 0.7em;
 	font-weight: 300;
+}
+
+.logo h2 {
+	font-size: 2vw;
+}
+
+.logo h2 span {
+	text-transform: capitalize; font-size: .7vw;
 }
 
 .menu {
@@ -86,7 +95,7 @@ nav {
 .menu li a {
 	text-transform: uppercase;
 	font-weight: 500;
-	font-size: 13px;
+	font-size: 1vw;
 	text-decoration: none;
 
 	padding: 10px;
@@ -135,9 +144,9 @@ nav {
 	border: solid black;
 	border-width: 0 2px 2px 0;
 	display: inline-block;
-	padding: 3px;
+	padding: 0.2vw;
 	margin-bottom: 2px;
-	margin-left: 2px;
+	margin-left: .3em;
 	transition: all 0.35s;
 }
 
