@@ -10,8 +10,18 @@
 			href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 			rel="stylesheet"
 		/>
-		<!-- Icons
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Icons -->
+		<link
+			rel="stylesheet"
+			href="path/to/font-awesome/css/font-awesome.min.css"
+		/>
 		<!-- Reset CSS -->
 		<link rel="stylesheet" href="../reset.css" />
 		<!-- Normal CSS Import -->
@@ -23,310 +33,371 @@
 	</head>
 	<body>
 		<nav>
+			<!-- <div class="hamburger-toggle">
+				<button>Toggle</button>
+			</div> -->
+
 			<div class="logo">
-				<h2>
-					Liverpool F.C 🇻🇳🇬🇧<span
-						>You Will Never Walk Alone</span
-					>
-				</h2>
+				<h2>Liverpool F.C 🇻🇳🇬🇧<span>You Will Never Walk Alone</span></h2>
+
+				<span class="mobile">LFC</span>
 			</div>
 
 			<div class="hall-of-fame">
-				<div>19<span>EPL</span></div><img src="./icon/pl.png" alt="trophy-icon">
-				<div>6<span>C1</span></div> <img src="./icon/cl.png" alt="trophy-icon">
-				<div>7<span>FA</span></div> <img src="./icon/fa.png" alt="trophy-icon">
-				<div>3<span>C2</span></div> <img src="./icon/el.png" alt="trophy-icon">
-				<div>8<span>CAR</span></div> <img src="./icon/carabao.png" alt="trophy-icon">
-				<div>4<span>SP</span></div> <img src="./icon/super.png" alt="trophy-icon">
-				<div>1<span>WC</span></div> <img src="./icon/el.png" alt="trophy-icon">
+				<div>19<span>EPL</span></div>
+				<img src="./icon/pl.png" alt="trophy-icon" />
+				<div>6<span>C1</span></div>
+				<img src="./icon/cl.png" alt="trophy-icon" />
+				<div>7<span>FA</span></div>
+				<img src="./icon/fa.png" alt="trophy-icon" />
+				<div>3<span>C2</span></div>
+				<img src="./icon/el.png" alt="trophy-icon" />
+				<div>8<span>CAR</span></div>
+				<img src="./icon/carabao.png" alt="trophy-icon" />
+				<div>4<span>SP</span></div>
+				<img src="./icon/super.png" alt="trophy-icon" />
+				<div>1<span>WC</span></div>
+				<img src="./icon/el.png" alt="trophy-icon" />
 			</div>
 
 			<ul class="menu">
-				<li>
-					<a class="nav-links" href="#"
-						>Lịch thi đấu <span class="arrow down"></span
-					></a>
-					<div class="wrapper">
-						<ul class="sub-menu">
-							<div class="sub-menu__links">
-								<ul class="sub-menu__col">
-									<a href="#">Trận sắp diễn ra</a>
-									<li>
-										Liverpool vs Everton
-										<span class="caption">Không khoan nhượng cho bọn đá bẩn</span>
-									</li>
-									<li>
-										Lịch thi đấu mùa giải<span class="caption"
-											>Theo dõi lịch thi đấu của Liverpool</span
-										>
-									</li>
-									<li>
-										Kết quả thi đấu<span class="caption"
-											>Cập nhật kết quả mới nhất</span
-										>
-									</li>
-								</ul>
-								<ul class="sub-menu__col">
-									<a href="#">Thông tin vé</a>
-									<li>
-										Mua vé online<span class="caption"
-											>Mua vé xem Liverpool dễ dàng</span
-										>
-									</li>
-								</ul>
-							</div>
-							<div class="sub-menu__picture">
-								<img
-									src="https://theanalyst.com/wp-content/uploads/2024/04/everton-vs-liverpool-prediction-opta-1.jpg"
-									alt="Anfield"
-								/>
-							</div>
-						</ul>
-					</div>
-				</li>
+				<div class="mobile menu--header">
+					<p>LFC</p>
+					<button>X</button>
+				</div>
+				<div class="menu-items">
+					<li>
+						<a class="nav-links" href="#"
+							>Lịch thi đấu <span class="arrow down"></span
+						></a>
+						<div class="wrapper">
+							<ul class="sub-menu">
+								<div class="sub-menu__links">
+									<ul class="sub-menu__col">
+										<a href="#">Trận sắp diễn ra</a>
+										<li>
+											Liverpool vs Everton
+											<span class="caption"
+												>Không khoan nhượng cho bọn đá bẩn</span
+											>
+										</li>
+										<li>
+											Lịch thi đấu mùa giải<span class="caption"
+												>Theo dõi lịch thi đấu của Liverpool</span
+											>
+										</li>
+										<li>
+											Kết quả thi đấu<span class="caption"
+												>Cập nhật kết quả mới nhất</span
+											>
+										</li>
+									</ul>
+									<ul class="sub-menu__col">
+										<a href="#">Thông tin vé</a>
+										<li>
+											Mua vé online<span class="caption"
+												>Mua vé xem Liverpool dễ dàng</span
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="sub-menu__picture">
+									<img
+										src="https://theanalyst.com/wp-content/uploads/2024/04/everton-vs-liverpool-prediction-opta-1.jpg"
+										alt="Anfield"
+									/>
+								</div>
+							</ul>
+						</div>
+					</li>
+	
+					<li>
+						<a class="nav-links" href="#"
+							>Đội hình & Cầu thủ <span class="arrow down"></span
+						></a>
+						<div class="wrapper">
+							<ul class="sub-menu">
+								<div class="sub-menu__links">
+									<ul class="sub-menu__col">
+										<a href="#">Cầu thủ</a>
+										<li>
+											Mohamed Salah
+											<span class="caption">Tiền đạo số một của Liverpool</span>
+										</li>
+										<li>
+											Virgil van Dijk<span class="caption"
+												>Trung vệ đáng tin cậy nhất</span
+											>
+										</li>
+										<li>
+											Thiago Alcantara<span class="caption"
+												>Tiền vệ tài hoa của đội bóng</span
+											>
+										</li>
+									</ul>
+									<ul class="sub-menu__col">
+										<a href="#">Huấn luyện viên</a>
+										<li>
+											Jurgen Klopp<span class="caption"
+												>Huấn luyện viên trưởng của Liverpool</span
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="sub-menu__picture">
+									<img
+										src="https://i.pinimg.com/564x/96/29/65/962965980956f06194029ff3fc6c4fde.jpg"
+										alt="Liverpool FC Team"
+									/>
+								</div>
+							</ul>
+						</div>
+					</li>
+	
+					<li>
+						<a class="nav-links" href="#"
+							>Quà lưu niệm <span class="arrow down"></span
+						></a>
+						<div class="wrapper">
+							<ul class="sub-menu">
+								<div class="sub-menu__links">
+									<ul class="sub-menu__col">
+										<a href="#">Áo đấu</a>
+										<li>
+											Áo đấu sân nhà
+											<span class="caption"
+												>Mua áo đấu mới nhất của Liverpool</span
+											>
+										</li>
+										<li>
+											Áo đấu sân khách
+											<span class="caption">Các mẫu áo đấu sân khách</span>
+										</li>
+									</ul>
+									<ul class="sub-menu__col">
+										<a href="#">Quà lưu niệm</a>
+										<li>
+											Khăn cổ<span class="caption"
+												>Cổ vũ cho Liverpool với khăn cổ</span
+											>
+										</li>
+										<li>
+											Mũ & Móc khóa<span class="caption"
+												>Các món đồ lưu niệm khác của Liverpool</span
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="sub-menu__picture">
+									<img
+										src="https://i.pinimg.com/564x/f6/9f/df/f69fdf5a0876d784b89671590d8df12c.jpg"
+										alt="Liverpool FC Merchandise"
+									/>
+								</div>
+							</ul>
+						</div>
+					</li>
+	
+					<li>
+						<a class="nav-links" href="#"
+							>Lịch sử CLB <span class="arrow down"></span
+						></a>
+						<div class="wrapper">
+							<ul class="sub-menu">
+								<div class="sub-menu__links">
+									<ul class="sub-menu__col">
+										<a href="#">Quản lý Hóa đơn</a>
+										<li>
+											Tạo hóa đơn
+											<span class="caption"
+												>Tạo hóa đơn tự động và nhanh chóng</span
+											>
+										</li>
+										<li>
+											Quản lý nợ phải thu
+											<span class="caption"
+												>Theo dõi các khoản nợ và thanh toán</span
+											>
+										</li>
+										<li>
+											Theo dõi thanh toán
+											<span class="caption"
+												>Quản lý và theo dõi các khoản thanh toán</span
+											>
+										</li>
+										<li>
+											Phân tích dòng tiền
+											<span class="caption"
+												>Phân tích dòng tiền để tối ưu hóa ngân sách</span
+											>
+										</li>
+									</ul>
+									<ul class="sub-menu__col">
+										<a href="#">Báo cáo Tài chính</a>
+										<li>
+											Báo cáo thu nhập
+											<span class="caption"
+												>Cung cấp báo cáo chi tiết về thu nhập</span
+											>
+										</li>
+										<li>
+											Báo cáo chi tiêu
+											<span class="caption"
+												>Theo dõi và báo cáo chi tiêu doanh nghiệp</span
+											>
+										</li>
+										<li>
+											Báo cáo nợ phải trả
+											<span class="caption">Chi tiết các khoản nợ phải trả</span>
+										</li>
+										<li>
+											Báo cáo thuế
+											<span class="caption"
+												>Chuẩn bị và quản lý báo cáo thuế</span
+											>
+										</li>
+									</ul>
+									<ul class="sub-menu__col">
+										<a href="#">Phân tích & Dự báo</a>
+										<li>
+											Dự báo tài chính
+											<span class="caption"
+												>Dự đoán và lập kế hoạch tài chính tương lai</span
+											>
+										</li>
+										<li>
+											Phân tích chi phí
+											<span class="caption"
+												>Phân tích chi phí để cắt giảm và tối ưu hóa</span
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="sub-menu__picture">
+									<img
+										src="https://i.pinimg.com/736x/b5/26/c0/b526c03085638f001cb1d78802cd8ee5.jpg"
+										alt="description picture"
+									/>
+								</div>
+							</ul>
+						</div>
+					</li>
+	
+					<li>
+						<a class="nav-links" href="#"
+							>khoá học bóng đá <span class="arrow down"></span
+						></a>
+						<div class="wrapper">
+							<ul class="sub-menu">
+								<div class="sub-menu__links">
+									<ul class="sub-menu__col">
+										<a href="#">Trẻ em</a>
+										<li>
+											Các khoá học bóng đá cho trẻ
+											<span class="caption">Phát triển kỹ năng từ sớm</span>
+										</li>
+									</ul>
+									<ul class="sub-menu__col">
+										<a href="#">Người lớn</a>
+										<li>
+											Các chương trình đào tạo cho người lớn
+											<span class="caption"
+												>Học bóng đá với các cựu cầu thủ Liverpool</span
+											>
+										</li>
+									</ul>
+									<ul class="sub-menu__col">
+										<a href="#">Người cao tuổi</a>
+										<li>
+											Các chương trình đào tạo bóng đá dưỡng sinh chuyên nghiệp
+											<span class="caption"
+												>Chương trình đặc biệt cho Nguyên</span
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="sub-menu__picture">
+									<img
+										src="https://i.pinimg.com/564x/3c/59/14/3c59149974e2e13b14466238abb77a60.jpg"
+										alt="Liverpool FC Football Courses"
+									/>
+								</div>
+							</ul>
+						</div>
+					</li>
+	
+					<li>
+						<a class="nav-links" href="#"
+							>Sự kiện mới<span class="arrow down"></span
+						></a>
+						<div class="wrapper">
+							<ul class="sub-menu">
+								<div class="sub-menu__links">
+									<ul class="sub-menu__col">
+										<a href="#">Sự kiện sắp diễn ra</a>
+										<li>
+											Gặp gỡ cầu thủ
+											<span class="caption"
+												>Cơ hội gặp gỡ và giao lưu với các cầu thủ</span
+											>
+										</li>
+										<li>
+											Ngày hội gia đình tại Anfield
+											<span class="caption"
+												>Trải nghiệm ngày hội gia đình đầy thú vị tại sân vận
+												động</span
+											>
+										</li>
+									</ul>
+									<ul class="sub-menu__col">
+										<a href="#">Hoạt động từ thiện</a>
+										<li>
+											Chạy bộ từ thiện
+											<span class="caption"
+												>Tham gia các hoạt động chạy bộ gây quỹ từ thiện</span
+											>
+										</li>
+										<li>
+											Đấu giá áo đấu
+											<span class="caption"
+												>Đấu giá áo đấu để hỗ trợ các quỹ từ thiện</span
+											>
+										</li>
+									</ul>
+								</div>
+								<div class="sub-menu__picture">
+									<img
+										src="https://i.pinimg.com/564x/3c/59/14/3c59149974e2e13b14466238abb77a60.jpg"
+										alt="Liverpool FC Events"
+									/>
+								</div>
+							</ul>
+						</div>
+					</li>
+				</div>
 
-				<li>
-                    <a class="nav-links" href="#">Đội hình & Cầu thủ <span class="arrow down"></span></a>
-                    <div class="wrapper">
-                        <ul class="sub-menu">
-                            <div class="sub-menu__links">
-                                <ul class="sub-menu__col">
-                                    <a href="#">Cầu thủ</a>
-                                    <li>
-                                        Mohamed Salah
-                                        <span class="caption">Tiền đạo số một của Liverpool</span>
-                                    </li>
-                                    <li>
-                                        Virgil van Dijk<span class="caption">Trung vệ đáng tin cậy nhất</span>
-                                    </li>
-                                    <li>
-                                        Thiago Alcantara<span class="caption">Tiền vệ tài hoa của đội bóng</span>
-                                    </li>
-                                </ul>
-                                <ul class="sub-menu__col">
-                                    <a href="#">Huấn luyện viên</a>
-                                    <li>
-                                        Jurgen Klopp<span class="caption">Huấn luyện viên trưởng của Liverpool</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="sub-menu__picture">
-                                <img
-                                    src="https://i.pinimg.com/564x/96/29/65/962965980956f06194029ff3fc6c4fde.jpg"
-                                    alt="Liverpool FC Team"
-                                />
-                            </div>
-                        </ul>
-                    </div>
-                </li>
+				<div class="mobile menu--register-box">
+					Join MYLFC FREE
+				</div>
 
-				<li>
-                    <a class="nav-links" href="#">Quà lưu niệm <span class="arrow down"></span></a>
-                    <div class="wrapper">
-                        <ul class="sub-menu">
-                            <div class="sub-menu__links">
-                                <ul class="sub-menu__col">
-                                    <a href="#">Áo đấu</a>
-                                    <li>
-                                        Áo đấu sân nhà
-                                        <span class="caption">Mua áo đấu mới nhất của Liverpool</span>
-                                    </li>
-                                    <li>
-                                        Áo đấu sân khách
-                                        <span class="caption">Các mẫu áo đấu sân khách</span>
-                                    </li>
-                                </ul>
-                                <ul class="sub-menu__col">
-                                    <a href="#">Quà lưu niệm</a>
-                                    <li>
-                                        Khăn cổ<span class="caption">Cổ vũ cho Liverpool với khăn cổ</span>
-                                    </li>
-                                    <li>
-                                        Mũ & Móc khóa<span class="caption">Các món đồ lưu niệm khác của Liverpool</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="sub-menu__picture">
-                                <img
-                                    src="https://i.pinimg.com/564x/f6/9f/df/f69fdf5a0876d784b89671590d8df12c.jpg"
-                                    alt="Liverpool FC Merchandise"
-                                />
-                            </div>
-                        </ul>
-                    </div>
-                </li>
-
-				<li>
-					<a class="nav-links" href="#"
-						>Lịch sử CLB <span class="arrow down"></span
-					></a>
-					<div class="wrapper">
-						<ul class="sub-menu">
-							<div class="sub-menu__links">
-								<ul class="sub-menu__col">
-									<a href="#">Quản lý Hóa đơn</a>
-									<li>
-										Tạo hóa đơn
-										<span class="caption"
-											>Tạo hóa đơn tự động và nhanh chóng</span
-										>
-									</li>
-									<li>
-										Quản lý nợ phải thu
-										<span class="caption"
-											>Theo dõi các khoản nợ và thanh toán</span
-										>
-									</li>
-									<li>
-										Theo dõi thanh toán
-										<span class="caption"
-											>Quản lý và theo dõi các khoản thanh toán</span
-										>
-									</li>
-									<li>
-										Phân tích dòng tiền
-										<span class="caption"
-											>Phân tích dòng tiền để tối ưu hóa ngân sách</span
-										>
-									</li>
-								</ul>
-								<ul class="sub-menu__col">
-									<a href="#">Báo cáo Tài chính</a>
-									<li>
-										Báo cáo thu nhập
-										<span class="caption"
-											>Cung cấp báo cáo chi tiết về thu nhập</span
-										>
-									</li>
-									<li>
-										Báo cáo chi tiêu
-										<span class="caption"
-											>Theo dõi và báo cáo chi tiêu doanh nghiệp</span
-										>
-									</li>
-									<li>
-										Báo cáo nợ phải trả
-										<span class="caption">Chi tiết các khoản nợ phải trả</span>
-									</li>
-									<li>
-										Báo cáo thuế
-										<span class="caption"
-											>Chuẩn bị và quản lý báo cáo thuế</span
-										>
-									</li>
-								</ul>
-								<ul class="sub-menu__col">
-									<a href="#">Phân tích & Dự báo</a>
-									<li>
-										Dự báo tài chính
-										<span class="caption"
-											>Dự đoán và lập kế hoạch tài chính tương lai</span
-										>
-									</li>
-									<li>
-										Phân tích chi phí
-										<span class="caption"
-											>Phân tích chi phí để cắt giảm và tối ưu hóa</span
-										>
-									</li>
-								</ul>
-							</div>
-							<div class="sub-menu__picture">
-								<img
-									src="https://i.pinimg.com/736x/b5/26/c0/b526c03085638f001cb1d78802cd8ee5.jpg"
-									alt="description picture"
-								/>
-							</div>
-						</ul>
-					</div>
-				</li>
-
-				<li>
-                    <a class="nav-links" href="#">khoá học bóng đá <span class="arrow down"></span></a>
-                    <div class="wrapper">
-                        <ul class="sub-menu">
-                            <div class="sub-menu__links">
-                                <ul class="sub-menu__col">
-                                    <a href="#">Trẻ em</a>
-                                    <li>
-                                        Các khoá học bóng đá cho trẻ
-                                        <span class="caption">Phát triển kỹ năng từ sớm</span>
-                                    </li>
-                                </ul>
-                                <ul class="sub-menu__col">
-                                    <a href="#">Người lớn</a>
-                                    <li>
-                                        Các chương trình đào tạo cho người lớn
-                                        <span class="caption">Học bóng đá với các cựu cầu thủ Liverpool</span>
-                                    </li>
-                                </ul>
-                                <ul class="sub-menu__col">
-                                    <a href="#">Người cao tuổi</a>
-                                    <li>
-                                        Các chương trình đào tạo bóng đá dưỡng sinh chuyên nghiệp
-                                        <span class="caption">Chương trình đặc biệt cho Nguyên</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="sub-menu__picture">
-                                <img
-                                    src="https://i.pinimg.com/564x/3c/59/14/3c59149974e2e13b14466238abb77a60.jpg"
-                                    alt="Liverpool FC Football Courses"
-                                />
-                            </div>
-                        </ul>
-                    </div>
-                </li>
-
-				<li>
-                    <a class="nav-links" href="#">Sự kiện mới<span class="arrow down"></span></a>
-                    <div class="wrapper">
-                        <ul class="sub-menu">
-                            <div class="sub-menu__links">
-                                <ul class="sub-menu__col">
-                                    <a href="#">Sự kiện sắp diễn ra</a>
-                                    <li>
-                                        Gặp gỡ cầu thủ
-                                        <span class="caption">Cơ hội gặp gỡ và giao lưu với các cầu thủ</span>
-                                    </li>
-                                    <li>
-                                        Ngày hội gia đình tại Anfield
-                                        <span class="caption">Trải nghiệm ngày hội gia đình đầy thú vị tại sân vận động</span>
-                                    </li>
-                                </ul>
-                                <ul class="sub-menu__col">
-                                    <a href="#">Hoạt động từ thiện</a>
-                                    <li>
-                                        Chạy bộ từ thiện
-                                        <span class="caption">Tham gia các hoạt động chạy bộ gây quỹ từ thiện</span>
-                                    </li>
-                                    <li>
-                                        Đấu giá áo đấu
-                                        <span class="caption">Đấu giá áo đấu để hỗ trợ các quỹ từ thiện</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="sub-menu__picture">
-                                <img
-                                    src="https://i.pinimg.com/564x/3c/59/14/3c59149974e2e13b14466238abb77a60.jpg"
-                                    alt="Liverpool FC Events"
-                                />
-                            </div>
-                        </ul>
-                    </div>
-                </li>
+				<div class="mobile menu--language-switcher">
+					English
+				</div>
+				
+				<div class="mobile menu--social-media">
+					English
+				</div>
 			</ul>
 
 			<div class="sponsored">
-				<img src="./icon/standard-chartered.png" alt="">
+				<img src="./icon/standard-chartered.png" alt="" />
 			</div>
 		</nav>
-        
-        
+
 		<div class="content">
 			<video autoplay loop muted>
-	            <source id="video" src="./we-are-liverpool.mp4" type="video/mp4">
-	        </video>
+				<source id="video" src="./we-are-liverpool.mp4" type="video/mp4" />
+			</video>
 		</div>
 	</body>
 </html>
