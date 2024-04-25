@@ -443,3 +443,12 @@ nav {
 	position: absolute;
 	animation: BlackenElement 1.6s 2.75s forwards;
 }
+
+/* Responsive Version */
+@media (max-width: 1000px) {
+	video { display: none; }
+	.content {
+	  background: url("https://upload.wikimedia.org/wikipedia/commons/0/02/Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg") ;
+	  background-size: cover;
+	}
+  }
