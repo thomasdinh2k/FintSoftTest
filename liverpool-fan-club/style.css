@@ -469,6 +469,10 @@ nav {
 }
 
 @media (max-width: 425px) {
+	body {
+		background-color: #000000;
+	}
+	
 	.logo h2 {
 		display: none;
 	}
@@ -535,12 +539,13 @@ nav {
 
 	.mobile.menu--header { 
 		width: 100%;
+		height: 10%;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
 		color: var(--site-red);
-		
+		border-bottom: 1px solid rgb(160, 164, 168);
 	}
 
 	.mobile.menu--header p {
