@@ -372,7 +372,8 @@ nav {
 	animation: slideInTrophies 0.8s 1.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
-	transition: padding 0.5s;
+	transition: all 1s;
+	
 }
 
 .hall-of-fame div {
@@ -380,10 +381,12 @@ nav {
 	flex-direction: column;
 	align-items: center;
 	gap: 0px;
+
+	font-size: 1.4vw;
 }
 
 .hall-of-fame span {
-	font-size: 0.6em;
+	font-size: 1vw;
 	display: none;
 	font-weight: bold;
 	transition: all 1.3s;
@@ -400,12 +403,17 @@ nav {
 	/* animation: slightlyDownTrophies 0.8s cubic-bezier(0.86, 0, 0.07, 1) forwards; */
 	/* transform: translateX(-50%) translateY(2px); */
 	/* top: 100px */
-	padding: 30px 15px;
+	padding: 15px;
+}
+
+.hall-of-fame:hover img {
+	width: 4vw;
+	height: 4vw;
 }
 
 .hall-of-fame img {
-	width: 40px;
-	height: 40px;
+	width: 3vw;
+	height: 3vw;
 	filter: gray saturate(0%) brightness(70%) contrast(100%) opacity(1);
 }
 
