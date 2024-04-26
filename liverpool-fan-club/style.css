@@ -1,6 +1,7 @@
 :root {
 	--site-red: #db1a5b;
 	--site-yellow: #d5daa5;
+	--site-white: #F5F5F5
 }
 
 html {
@@ -491,7 +492,7 @@ nav {
 	}
 
 	.menu {
-		background-color: whitesmoke;
+		background: var(--site-white);
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
@@ -550,10 +551,17 @@ nav {
 		font-size: 6vh;
 	}
 
-	.menu-items li{
+	.mobile.menu-items li{
 		display: flex;
-		width: 100%;
+		flex-direction: column;
+
+		max-width: 69vw;
 		margin-bottom: 2rem;
+
+		position: relative;
+		/* border: 1px solid salmon; Temp */
+		
+
 	}
 
 	.nav-links {
@@ -561,6 +569,44 @@ nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
+	}
+
+	.menu li:hover .wrapper {
+		display: none;
+	}
+
+	.menu li .wrapper.show {
+		display: block;
+		position: relative;
+		top: 0;
+		left: 0;
+		/* left: -266px; */
+	}
+
+	.mobile .sub-menu {
+		padding: 0;
+		margin: 0;
+		border: none;
+		box-shadow: none;
+
+		border: 2px solid lightcyan; /* Temp */
+	}
+	.mobile .sub-menu__picture {
+		display: none;
+	}
+
+	.mobile .sub-menu__links {
+		display: block;
+		position: relative;
+		max-width: 100%;
+	}
+
+	.mobile .sub-menu__links > .sub-menu__col {
+		padding-left: 0;
+	}
+
+	.mobile .sub-menu__links > .sub-menu__col > li {
+		flex-direction: column;
 	}
 }
 
