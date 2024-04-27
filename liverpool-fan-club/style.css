@@ -569,16 +569,20 @@ nav {
 		justify-content: space-between;
 	}
 
-	.mobile.menu-items .wrapper ul.sub-menu {
+	.mobile.menu-items .wrapper.show ul.sub-menu {
 		/* Styling Sub-menu*/
 		/* background-color: red; */
 	}
 
-	.mobile.menu-items .wrapper {
+	.mobile.menu-items .wrapper.show {
 		padding-top: 0;
 	}
 
-	.menu li:hover .wrapper {
+	.menu li .wrapper {
+		display: none;
+	}
+
+	.menu li .sub-menu {
 		display: none;
 	}
 
@@ -589,6 +593,10 @@ nav {
 		left: 0;
 		padding: 10px;
 		/* left: -266px; */
+	}
+
+	.menu li .wrapper.show .sub-menu{
+		display: block;
 	}
 
 	.mobile .sub-menu {
@@ -646,5 +654,9 @@ nav {
 		/* border-top: none; */
 	}
 
-	
+	.mobile .sub-menu__links > .sub-menu__col:hover > .sub-menu__col:first-child a { 
+		color:  red;
+	}
+
+
 }
