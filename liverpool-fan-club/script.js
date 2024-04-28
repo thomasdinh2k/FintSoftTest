@@ -1,18 +1,28 @@
-// Ensure jQuery is ready
+function closeAll(except) {
+	$(".wrapper").each(function () {
+		if (this !== except) {
+			$(this).attr({
+				"aria-expanded": false,
+				"aria-hidden": true,
+			})
+		}
+	})
+}
+
 $(document).ready(function () {
-	// Set up click event on the <a> element with class "nav-links"
-	$("a.nav-links").click(function (event) {
-		event.preventDefault() // Prevent the default anchor click behavior
+	$(".nav-links").click(function (e) {
+		e.preventDefault()
 
-		// Find the next sibling .wrapper of the clicked <a>
-		var $wrapper = $(this).next(".wrapper")
+		// Find .wrapper
+		var wrapper = $(this).next(".wrapper")
+		var isExpanded = wrapper.attr("aria-expanded") === "true"
+		
+		// Close all sub-menu first!
+		closeAll($(this))
 
-		// Toggle the aria-hidden and aria-expanded attributes
-		var isExpanded = $wrapper.attr("aria-expanded") === "true"
-		$wrapper.attr("aria-expanded", !isExpanded)
-		$wrapper.attr("aria-hidden", isExpanded)
-
-		// Optionally toggle additional class for CSS styling if needed
-		// $wrapper.toggleClass('some-class');
+		$(wrapper).attr({
+			"aria-expanded": !isExpanded,
+			"aria-hidden": isExpanded,
+		})
 	})
 })
