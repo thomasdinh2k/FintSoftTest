@@ -208,7 +208,7 @@ nav {
 	}
 }
 
-.wrapper {
+.wrapper[aria-hidden="true"] {
 	/* z-index: -777; */
 	display: none;
 	position: fixed;
@@ -458,7 +458,11 @@ nav {
 	animation: BlackenElement 1.6s 2.75s forwards;
 }
 
-/* Responsive Version */
+
+/*=============================================
+=            Responsive Version            =
+=============================================*/
+
 @media (max-width: 768px) {
 	.content {
 		display: none;
@@ -569,34 +573,12 @@ nav {
 		justify-content: space-between;
 	}
 
-	.mobile.menu-items .wrapper.show ul.sub-menu {
-		/* Styling Sub-menu*/
-		/* background-color: red; */
-	}
-
-	.mobile.menu-items .wrapper.show {
-		padding-top: 0;
-	}
-
-	.menu li .wrapper {
+	.wrapper[aria-hidden="true"] {
 		display: none;
 	}
 
-	.menu li .sub-menu {
+	.wrapper[aria-hidden="true"] > .sub-menu{
 		display: none;
-	}
-
-	.menu li .wrapper.show {
-		display: block;
-		position: relative;
-		top: -3px;
-		left: 0;
-		padding: 10px;
-		/* left: -266px; */
-	}
-
-	.menu li .wrapper.show .sub-menu{
-		display: block;
 	}
 
 	.mobile .sub-menu {
@@ -658,5 +640,22 @@ nav {
 		color:  red;
 	}
 
+	/* Test ARIA */
+	.mobile.menu-items .wrapper[aria-expanded="true"] {
+		padding-top: 0;
+	}
+
+	.menu li .wrapper.show[aria-expanded="true"] {
+		display: block;
+		position: relative;
+		top: -3px;
+		left: 0;
+		padding: 10px;
+		/* left: -266px; */
+	}
+
+	.menu li .wrapper.show[aria-expanded="true"].sub-menu{
+		display: block;
+	}
 
 }
