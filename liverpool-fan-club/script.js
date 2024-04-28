@@ -16,7 +16,7 @@ $(document).ready(function () {
 		// Find .wrapper
 		var wrapper = $(this).next(".wrapper")
 		var isExpanded = wrapper.attr("aria-expanded") === "true"
-		
+
 		// Close all sub-menu first!
 		closeAll($(this))
 
@@ -25,4 +25,8 @@ $(document).ready(function () {
 			"aria-hidden": isExpanded,
 		})
 	})
+
+	// Check if viewport > 425 then remove <div data-device="mobile" class="mobile menu-items">
+
+	// Check if .wrapper have aria-expanded="true", if so, give <li> an attr of "mobile active" and style CSS with it
 })
