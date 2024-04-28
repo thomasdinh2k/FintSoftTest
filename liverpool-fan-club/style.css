@@ -111,8 +111,9 @@ nav {
 }
 
 /* Nice Hover animation */
-a.nav-links::before,
-a.nav-links::after {
+
+.menu-items[data-device="desktop"] a.nav-links::before,
+.menu-items[data-device="desktop"] a.nav-links::after {
 	background: var(--site-red);
 
 	content: "";
@@ -124,26 +125,21 @@ a.nav-links::after {
 	transition: all 0.5s;
 }
 
-.menu li a.nav-links::before {
+.menu-items[data-device="desktop"] li a.nav-links::before {
 	top: 0;
 	transform-origin: left;
 }
 
-.menu li a.nav-links::after {
+.menu-items[data-device="desktop"] li a.nav-links::after {
 	bottom: 0;
 	transform-origin: right;
 }
 
-.menu li a.nav-links:hover::before,
-.menu li a.nav-links:hover::after {
+.menu-items[data-device="desktop"] li a.nav-links:hover::before,
+.menu-items[data-device="desktop"] li a.nav-links:hover::after {
 	transform: scaleX(1);
 }
 
-/* .menu li a:hover {
-	background-color: var(--site-red);
-	color: white;
-	border-radius: 15px;
-} */
 
 /* Arrow things */
 .arrow {
@@ -661,18 +657,34 @@ a.nav-links::after {
 		display: block;
 	}
 
+
 	/* Alter sub-menu active animation */
 
-	.menu li a.nav-links::before,
-	.menu li a.nav-links::after {
+	.menu li[data-mobile-active="true"] a.nav-links::before,
+	.menu li[data-mobile-active="true"] a.nav-links::after {
 		content: "";
 
 		background: orange;
 		position: absolute;
 		width: 100%;
-		height: 4px;
+		height: 2px;
 		left: 0;
-		transform: scaleX(0); /* hide the element for animation */
+		transform: scaleX(0); 
 		transition: all 0.5s;
+	}
+
+	.menu-items[data-device="mobile"] li a.nav-links::before {
+		top: 0;
+		transform-origin: left;
+	}
+	
+	.menu-items[data-device="mobile"] li a.nav-links::after {
+		bottom: 0;
+		transform-origin: right;
+	}
+	
+	.menu-items[data-device="mobile"] li a.nav-links:hover::before,
+	.menu-items[data-device="mobile"] li a.nav-links:hover::after {
+		transform: scaleX(1);
 	}
 }
