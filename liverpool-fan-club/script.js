@@ -10,6 +10,7 @@ function closeAll(except) {
 }
 
 $(document).ready(function () {
+	// [x] Open sub-menu based on nav-links
 	$(".nav-links").click(function (e) {
 		e.preventDefault()
 
@@ -18,7 +19,7 @@ $(document).ready(function () {
 		var isExpanded = wrapper.attr("aria-expanded") === "true"
 
 		// Close all sub-menu first!
-		closeAll($(this))
+		closeAll($(this));
 
 		$(wrapper).attr({
 			"aria-expanded": !isExpanded,
@@ -26,7 +27,16 @@ $(document).ready(function () {
 		})
 	})
 
-	// Check if viewport > 425 then remove <div data-device="mobile" class="mobile menu-items">
+	// [x] Check if viewport > 425 then remove <div data-device="mobile" class="mobile menu-items">
+	var currentWidth = $(document).width();
+	console.log(`Current viewport is ${currentWidth}`);
+	$("#viewport-info").html(currentWidth);
 
-	// Check if .wrapper have aria-expanded="true", if so, give <li> an attr of "mobile active" and style CSS with it
+	if (currentWidth > 425) {
+		$(".menu-items").attr('data-device', 'desktop');
+	} else {
+		$(".menu-items").attr("data-device", "mobile")
+	}
+	// [ ] Check if .wrapper have aria-expanded="true", if so, give <li> an attr of "mobile active" and style CSS with it
+
 })

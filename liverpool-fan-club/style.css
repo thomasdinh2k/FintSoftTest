@@ -454,6 +454,8 @@ nav {
 	animation: BlackenElement 1.6s 2.75s forwards;
 }
 
+/* [ ] Add cursor chasing effect to desktop version */
+
 /*=============================================
 =            Responsive Version            =
 =============================================*/
@@ -687,4 +689,7 @@ nav {
 	.menu-items[data-device="mobile"] li a.nav-links:hover::after {
 		transform: scaleX(1);
 	}
+
+	
+	/* [ ] Fix: Allows hover-lines to behave correctly when certain menu is on active*/
 }
