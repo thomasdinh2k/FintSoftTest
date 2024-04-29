@@ -611,7 +611,7 @@ nav {
 		border-radius: 0;
 		border-bottom: 1.5px solid var(--site-grey);
 	}
-	
+
 	.mobile .sub-menu__links > .sub-menu__col > li {
 		font-size: 0.7em;
 	}
@@ -664,7 +664,7 @@ nav {
 		height: 2px;
 		left: 0;
 		transform: scaleX(0);
-		transition: all .8s;
+		transition: all 0.8s;
 	}
 
 	/* [x] Fix: Allows hover-lines to behave correctly when certain menu is on active*/
@@ -687,7 +687,7 @@ nav {
 		height: 1px;
 		left: 0;
 		transform: scaleX(0);
-		transition: all .8s;
+		transition: all 0.8s;
 	}
 
 	.menu-items[data-device="mobile"] li a.nav-links::before {
@@ -709,15 +709,43 @@ nav {
 		transform: scaleX(1);
 	}
 
-	
 	/* [ ] Sub-menu slide-down animation */
 	@keyframes in {
 		from {
 			left: -100%;
 			opacity: 0;
-		} to {
+		}
+		to {
 			left: 0;
 			opacity: 1;
 		}
 	}
+
+	.sub-menu__col {
+		position: relative;
+		left: -100%;
+	}
+
+	$nav-sub-menu__col: 3;
+	
+	@for $i from 1 through $nav-sub-menu__col {
+		ul.sub-menu__col:nth-of-type(#{$i}) {
+			animation: in 0.45s 0.25s + $i/8 forwards;
+			-webkit-transition-timing-function: cubic-bezier(
+				0.68,
+				-0.55,
+				0.265,
+				1.55
+			);
+			-moz-animation: in 0.15s 0.45s + $i/8 forwards;
+			-moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		}
+	}
+
+	// input[type='radio']:checked + label{
+	// 	height: 325px;background: #212e41;
+	// 	text-indent:4px;
+	// 	transition-property:height;
+	// 	transition-duration:.6s; -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	//   }
 }
