@@ -520,7 +520,7 @@ a {
     height: 2px;
     left: 0;
     transform: scaleX(0);
-    transition: all .8s; }
+    transition: all 0.8s; }
   /* [x] Fix: Allows hover-lines to behave correctly when certain menu is on active*/
   .menu-items[data-device="mobile"] li[data-mobile-active="true"] a.nav-links {
     color: #db1a5b;
@@ -538,7 +538,7 @@ a.nav-links::after {
     height: 1px;
     left: 0;
     transform: scaleX(0);
-    transition: all .8s; }
+    transition: all 0.8s; }
   .menu-items[data-device="mobile"] li a.nav-links::before {
     top: 0;
     transform-origin: left; }
@@ -559,4 +559,22 @@ a.nav-links::after {
       opacity: 0; }
     to {
       left: 0;
-      opacity: 1; } } }
+      opacity: 1; } }
+  .sub-menu__col {
+    position: relative;
+    left: -100%; }
+  ul.sub-menu__col:nth-of-type(1) {
+    animation: in 0.45s 0.375s forwards;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-animation: in 0.15s 0.575s forwards;
+    -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  ul.sub-menu__col:nth-of-type(2) {
+    animation: in 0.45s 0.5s forwards;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-animation: in 0.15s 0.7s forwards;
+    -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  ul.sub-menu__col:nth-of-type(3) {
+    animation: in 0.45s 0.625s forwards;
+    -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-animation: in 0.15s 0.825s forwards;
+    -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); } }
