@@ -709,7 +709,7 @@ nav {
 		transform: scaleX(1);
 	}
 
-	/* [ ] Sub-menu slide-down animation */
+	/* [x] Sub-menu slide animation */
 	@keyframes in {
 		from {
 			left: -100%;
@@ -742,10 +742,21 @@ nav {
 		}
 	}
 
-	// input[type='radio']:checked + label{
-	// 	height: 325px;background: #212e41;
-	// 	text-indent:4px;
-	// 	transition-property:height;
-	// 	transition-duration:.6s; -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-	//   }
+	.wrapper[aria-expanded="false"] {
+		.sub-menu {
+			height: 0;
+			transition: height 3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+			overflow: hidden;
+	
+			// transition-property: height;
+			// transition-duration: 3s;
+			// transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+		}
+	}
+
+	.wrapper.show[aria-expanded="true"] {
+		.sub-menu {
+			height: 100%;
+		}
+	}
 }

@@ -552,7 +552,7 @@ a.nav-links::before,
 li[data-mobile-active="true"]
 a.nav-links::after {
     transform: scaleX(1); }
-  /* [ ] Sub-menu slide-down animation */
+  /* [x] Sub-menu slide animation */
   @keyframes in {
     from {
       left: -100%;
@@ -577,4 +577,10 @@ a.nav-links::after {
     animation: in 0.45s 0.625s forwards;
     -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
     -moz-animation: in 0.15s 0.825s forwards;
-    -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); } }
+    -moz-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55); }
+  .wrapper[aria-expanded="false"] .sub-menu {
+    height: 0;
+    transition: height 3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    overflow: hidden; }
+  .wrapper.show[aria-expanded="true"] .sub-menu {
+    height: 100%; } }
