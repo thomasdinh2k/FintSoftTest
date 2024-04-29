@@ -140,7 +140,6 @@ nav {
 	transform: scaleX(1);
 }
 
-
 /* Arrow things */
 .arrow {
 	border: solid black;
@@ -604,6 +603,7 @@ nav {
 		flex-direction: column;
 	}
 
+	/* [ ] Fix: Border-top is being conflict with animation */
 	.mobile .sub-menu__links > .sub-menu__col > a {
 		border-bottom: none;
 		border-top: 1px solid var(--site-red);
@@ -661,9 +661,8 @@ nav {
 
 
 	/* Alter sub-menu active animation */
-
-	.menu li[data-mobile-active="true"] a.nav-links::before,
-	.menu li[data-mobile-active="true"] a.nav-links::after {
+	.menu li[data-mobile-active="false"] a.nav-links::before,
+	.menu li[data-mobile-active="false"] a.nav-links::after {
 		content: "";
 
 		background: orange;
@@ -671,25 +670,52 @@ nav {
 		width: 100%;
 		height: 2px;
 		left: 0;
-		transform: scaleX(0); 
-		transition: all 0.5s;
+		transform: scaleX(0);
+		transition: transform 2s;
 	}
 
-	.menu-items[data-device="mobile"] li a.nav-links::before {
+	/* [x] Fix: Allows hover-lines to behave correctly when certain menu is on active*/
+	.menu-items[data-device="mobile"] li[data-mobile-active="true"] a.nav-links {
+		color: #db1a5b;
+	}
+
+	.menu-items[data-device="mobile"]
+		li[data-mobile-active="true"]
+		a.nav-links::before,
+	.menu-items[data-device="mobile"]
+		li[data-mobile-active="true"]
+		a.nav-links::after {
+		content: "";
+
+		background: rgb(134, 119, 89);
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 0;
+		transform: scaleX(0);
+		transition: all 2s;
+	}
+
+	.menu-items[data-device="mobile"]
+		li
+		a.nav-links::before {
 		top: 0;
 		transform-origin: left;
 	}
-	
-	.menu-items[data-device="mobile"] li a.nav-links::after {
+
+	.menu-items[data-device="mobile"]
+		li
+		a.nav-links::after {
 		bottom: 0;
 		transform-origin: right;
 	}
-	
-	.menu-items[data-device="mobile"] li a.nav-links:hover::before,
-	.menu-items[data-device="mobile"] li a.nav-links:hover::after {
+
+	.menu-items[data-device="mobile"]
+		li[data-mobile-active="true"]
+		a.nav-links::before,
+	.menu-items[data-device="mobile"]
+		li[data-mobile-active="true"]
+		a.nav-links::after {
 		transform: scaleX(1);
 	}
-
-	
-	/* [ ] Fix: Allows hover-lines to behave correctly when certain menu is on active*/
 }
