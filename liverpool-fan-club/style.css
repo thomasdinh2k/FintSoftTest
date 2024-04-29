@@ -234,7 +234,7 @@ nav {
 	text-transform: capitalize;
 }
 
-.sub-menu__links > .sub-menu__col > a {
+.menu-items[data-device="desktop"] .sub-menu__links > .sub-menu__col > a {
 	font-weight: bolder;
 	width: 275px;
 	border-bottom: 1px solid var(--site-grey);
@@ -244,7 +244,7 @@ nav {
 	padding: 10px 0;
 }
 
-.sub-menu__links > .sub-menu__col:hover a {
+.menu-items[data-device="desktop"] .sub-menu__links > .sub-menu__col:hover a {
 	color: red;
 	/* Reset outer-scope */
 	background-color: transparent;
@@ -578,7 +578,7 @@ nav {
 	}
 
 	.mobile .sub-menu {
-		padding: 0;
+		padding: 5px 2px;
 		margin: 0;
 		border: none;
 		box-shadow: none;
@@ -603,16 +603,15 @@ nav {
 		flex-direction: column;
 	}
 
-	/* [ ] Fix: Border-top is being conflict with animation */
-	.mobile .sub-menu__links > .sub-menu__col > a {
-		border-bottom: none;
-		border-top: 1px solid var(--site-red);
-		font-size: 0.8em;
-		color: black;
-		padding-bottom: 0px;
-		width: 100%;
+	/* [x] Fix: Border-top is being conflict with animation */
+	.mobile .sub-menu__links > .sub-menu__col a {
+		padding: 0px;
+		width: 10px;
+		font-size: 0.7em;
+		border-radius: 0;
+		border-bottom: 1.5px solid var(--site-grey);
 	}
-
+	
 	.mobile .sub-menu__links > .sub-menu__col > li {
 		font-size: 0.7em;
 	}
@@ -626,11 +625,7 @@ nav {
 	.mobile .sub-menu__links > .sub-menu__col > li:last-of-type {
 		/* Tạo khoảng cách cho các li bên dưới */
 		/* color: orange; */
-		/* padding-bottom: 3em; */
-	}
-
-	.mobile .sub-menu__links .sub-menu__col:first-child {
-		/* border-top: none; */
+		padding-bottom: 1em;
 	}
 
 	.mobile
@@ -659,24 +654,23 @@ nav {
 		display: block;
 	}
 
-
 	/* Alter sub-menu active animation */
 	.menu li[data-mobile-active="false"] a.nav-links::before,
 	.menu li[data-mobile-active="false"] a.nav-links::after {
 		content: "";
-
-		background: orange;
+		/* background: orange; */
 		position: absolute;
 		width: 100%;
 		height: 2px;
 		left: 0;
 		transform: scaleX(0);
-		transition: transform 2s;
+		transition: all .8s;
 	}
 
 	/* [x] Fix: Allows hover-lines to behave correctly when certain menu is on active*/
 	.menu-items[data-device="mobile"] li[data-mobile-active="true"] a.nav-links {
 		color: #db1a5b;
+		margin-bottom: 1rem;
 	}
 
 	.menu-items[data-device="mobile"]
@@ -687,25 +681,21 @@ nav {
 		a.nav-links::after {
 		content: "";
 
-		background: rgb(134, 119, 89);
+		background: var(--site-red);
 		position: absolute;
 		width: 100%;
-		height: 2px;
+		height: 1px;
 		left: 0;
 		transform: scaleX(0);
-		transition: all 2s;
+		transition: all .8s;
 	}
 
-	.menu-items[data-device="mobile"]
-		li
-		a.nav-links::before {
+	.menu-items[data-device="mobile"] li a.nav-links::before {
 		top: 0;
 		transform-origin: left;
 	}
 
-	.menu-items[data-device="mobile"]
-		li
-		a.nav-links::after {
+	.menu-items[data-device="mobile"] li a.nav-links::after {
 		bottom: 0;
 		transform-origin: right;
 	}
