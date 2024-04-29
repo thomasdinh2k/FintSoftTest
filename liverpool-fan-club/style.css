@@ -502,7 +502,7 @@ nav {
 		left: 0;
 		width: 80%;
 		z-index: 999;
-		height: 100vh;
+		min-height: 100vh;
 		padding-left: 20px;
 	}
 
@@ -708,4 +708,19 @@ nav {
 		a.nav-links::after {
 		transform: scaleX(1);
 	}
+
+	
+	/* [ ] Sub-menu slide-down animation */
+	@keyframes in {
+		from {
+			left: -100%;
+			opacity: 0;
+		} to {
+			left: 0;
+			opacity: 1;
+		}
+	}
+
+	
+	
 }
