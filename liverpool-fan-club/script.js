@@ -57,3 +57,5 @@ $(document).ready(function () {
 		$(".menu-items").attr("data-device", "mobile")
 	}
 })
+
+// [ ] Close side-bar when button click (with animation)
