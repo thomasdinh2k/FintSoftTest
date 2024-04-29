@@ -747,10 +747,6 @@ nav {
 			height: 0;
 			transition: height 3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 			overflow: hidden;
-	
-			// transition-property: height;
-			// transition-duration: 3s;
-			// transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 		}
 	}
 
@@ -759,4 +755,16 @@ nav {
 			height: 100%;
 		}
 	}
+
+	
+	/* Sub-menu arrow */
+	.menu-items[data-device="mobile"] {
+		li[data-mobile-active="true"] {
+			.arrow.down{
+				transform: rotate(222deg);
+				-webkit-transform: rotate(222deg);
+			}
+		}
+	}
+	
 }
