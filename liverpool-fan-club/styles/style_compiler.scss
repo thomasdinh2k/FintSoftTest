@@ -470,7 +470,16 @@ nav {
 		background-color: #000000;
 	}
 
-	.logo h2 {
+	nav {
+		background: none;
+		overflow: visible;
+	}
+
+	.sponsored {
+		display: none;
+	}
+
+	.logo {
 		display: none;
 	}
 
@@ -509,6 +518,7 @@ nav {
 		li a {
 			width: 279px;
 			font-size: 1.2rem;
+			margin-bottom: 10px;
 		}
 
 		.nav-links {
@@ -522,7 +532,6 @@ nav {
 		}
 
 		.mobile.menu--header {
-			// [ ] Make header stick when scroll down
 			width: 95%;
 			height: 10%;
 			display: flex;
@@ -531,6 +540,13 @@ nav {
 			align-items: center;
 			color: var(--site-red);
 			border-bottom: 1px solid rgb(160, 164, 168);
+			// [x] Make header stick when scroll down
+			position: sticky;
+			top: 0;
+			left: 0;
+			width: 280px;
+			background-color: var(--site-white);
+			z-index: 999;
 
 			p {
 				display: block;
@@ -546,6 +562,7 @@ nav {
 
 				max-width: 69vw;
 				position: relative;
+				
 				/* border: 1px solid salmon; Temp */
 			}
 
@@ -572,15 +589,15 @@ nav {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 
-	.sponsored {
-		animation: none;
-		transform: translateX(0);
-		height: 125%;
-	}
+	// .sponsored {
+	// 	animation: none;
+	// 	transform: translateX(0);
+	// 	height: 125%;
+	// }
 
-	.sponsored img {
-		top: -4px;
-	}
+	// .sponsored img {
+	// 	top: -4px;
+	// }
 
 	.wrapper[aria-hidden="true"] {
 		display: none;
@@ -854,7 +871,7 @@ nav {
 	ul.footer {
 		display: flex;
 		width: 200px;
-		
+
 		li:first-child a {
 			font-weight: bolder;
 			padding-left: 0;
