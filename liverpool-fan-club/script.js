@@ -100,5 +100,8 @@ $(function () {
 			},
 			300
 		)
+
+		// Give the bg more blur
+		
 	})
 })
