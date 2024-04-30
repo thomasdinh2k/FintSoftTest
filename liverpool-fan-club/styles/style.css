@@ -637,7 +637,8 @@ a.nav-links::after {
     border-bottom: 1px solid var(--site-grey); }
     .menu--language-switcher img {
       width: 24px;
-      height: 16px; }
+      height: 16px;
+      object-fit: cover; }
     .menu--language-switcher .arrow,
     .menu--language-switcher .right {
       border-width: 0 1px 1px 0;
