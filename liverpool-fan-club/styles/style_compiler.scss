@@ -467,8 +467,25 @@ nav {
 
 @media (max-width: 425px) {
 	body {
-		background-color: #000000;
+		// background-color: #000000;
+		background: url("https://i.pinimg.com/564x/f2/4c/b0/f24cb0e45e62ad7bf2fb9f2871ebfc7c.jpg");	
+		overflow-x: hidden; // Prevent scrolling
 	}
+
+	body::before{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #000000;
+		background-size: cover;
+		filter: blur(20px);
+		opacity: .4;
+	}
+
+
 
 	nav {
 		// background: none;
@@ -519,6 +536,7 @@ nav {
 	video {
 		display: none;
 	}
+	
 	.content {
 		background: url("https://upload.wikimedia.org/wikipedia/commons/0/02/Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg");
 		background-size: cover;
