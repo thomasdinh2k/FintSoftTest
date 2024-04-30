@@ -387,17 +387,32 @@ nav {
   body {
     background-color: #000000; }
   nav {
-    background: none;
+    background-color: var(--site-red);
     overflow: visible; }
-  .sponsored {
+  .hamburger-toggle {
+    display: flex;
+    justify-content: space-around; }
+    .hamburger-toggle button div {
+      width: 30px;
+      height: 3px;
+      margin: 6.5px 0;
+      background-color: var(--site-white); }
+  .logo h2 {
     display: none; }
-  .logo {
-    display: none; }
-  .logo > .mobile {
+  .logo .mobile {
     display: block;
     font-family: "Noto Serif Display", serif;
     font-weight: 800;
-    font-size: 6vh; }
+    font-size: 5.5vh;
+    color: var(--site-white); }
+  .sponsored {
+    animation: none;
+    transform: translateX(0); }
+    .sponsored img {
+      animation: none;
+      filter: brightness(10000%) contrast(10000%);
+      position: static;
+      width: 65%; }
   video {
     display: none; }
   .content {
@@ -407,7 +422,7 @@ nav {
     padding: 0.2rem; }
   .menu {
     background: var(--site-white);
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
