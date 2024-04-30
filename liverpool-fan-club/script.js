@@ -60,15 +60,45 @@ $(document).ready(function () {
 
 // Animate social-icons on scroll
 $(function () {
-	var hitBox = $(".menu--social-media");
+	var hitBox = $(".menu--social-media")
 
-	$(window).scroll(function () { 
-		var scroll = $(window).scrollTop();
+	$(window).scroll(function () {
+		var scroll = $(window).scrollTop()
 		if (scroll >= 60) {
-			$(hitBox).addClass("action");
+			$(hitBox).addClass("action")
 		}
-	});
-	
-});
+	})
+})
 
 // [ ] Close side-bar when button click (with animation)
+$(function () {
+	var menu = $("ul.menu")
+
+	$(".mobile.menu--header button").click(function (e) {
+		e.preventDefault()
+		// Hide menu
+		menu.animate(
+			{
+				left: "-100%",
+				opacity: 0,
+			},
+			300,
+			function () {
+				menu.css("display", "none") // Hide after animation
+			}
+		)
+	})
+
+	$(".hamburger-toggle").click(function (e) {
+		e.preventDefault()
+		// Show menu
+		menu.css({ display: "flex", left: "-100%", opacity: 0 }) // Set initial position
+		menu.animate(
+			{
+				left: "0",
+				opacity: 1,
+			},
+			300
+		)
+	})
+})
