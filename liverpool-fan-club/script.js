@@ -58,4 +58,17 @@ $(document).ready(function () {
 	}
 })
 
+// Animate social-icons on scroll
+$(function () {
+	var hitBox = $(".menu--social-media");
+
+	$(window).scroll(function () { 
+		var scroll = $(window).scrollTop();
+		if (scroll >= 60) {
+			$(hitBox).addClass("action");
+		}
+	});
+	
+});
+
 // [ ] Close side-bar when button click (with animation)

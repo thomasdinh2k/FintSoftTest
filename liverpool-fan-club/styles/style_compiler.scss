@@ -562,7 +562,7 @@ nav {
 
 				max-width: 69vw;
 				position: relative;
-				
+
 				/* border: 1px solid salmon; Temp */
 			}
 
@@ -864,8 +864,37 @@ nav {
 		width: 280px;
 		grid-template-columns: repeat(7, 1fr);
 		gap: 10px;
+
+		@keyframes vibrantLogo {
+			from {
+			}
+			to {
+				filter: grayscale(0) brightness(90%);
+			}
+		}
+
 		img {
-			border-radius: 100%;
+			filter: grayscale(1);
+			left: -1000px;
+			position: relative;
+			// animation: vibrantLogo 3s forwards;
+		}
+
+		// Fire animation on class ".action"
+		&.action {
+			$social-icons: 7;
+
+			@for $i from 1 through $social-icons {
+				li:nth-of-type(#{$i}) img {
+					animation:in 0.45s 0.95s + $i/8 forwards, vibrantLogo 0.45s 1.95s + $i/8 forwards;
+
+					// animation: none;
+				}
+			}
+		}
+
+		img:hover {
+			filter: brightness(100%);
 		}
 	}
 

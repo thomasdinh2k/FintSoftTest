@@ -651,8 +651,30 @@ a.nav-links::after {
     width: 280px;
     grid-template-columns: repeat(7, 1fr);
     gap: 10px; }
+  @keyframes vibrantLogo {
+    from { }
+    to {
+      filter: grayscale(0) brightness(90%); } }
     .menu--social-media img {
-      border-radius: 100%; }
+      filter: grayscale(1);
+      left: -1000px;
+      position: relative; }
+    .menu--social-media.action li:nth-of-type(1) img {
+      animation: in 0.45s 1.075s forwards, vibrantLogo 0.45s 2.075s forwards; }
+    .menu--social-media.action li:nth-of-type(2) img {
+      animation: in 0.45s 1.2s forwards, vibrantLogo 0.45s 2.2s forwards; }
+    .menu--social-media.action li:nth-of-type(3) img {
+      animation: in 0.45s 1.325s forwards, vibrantLogo 0.45s 2.325s forwards; }
+    .menu--social-media.action li:nth-of-type(4) img {
+      animation: in 0.45s 1.45s forwards, vibrantLogo 0.45s 2.45s forwards; }
+    .menu--social-media.action li:nth-of-type(5) img {
+      animation: in 0.45s 1.575s forwards, vibrantLogo 0.45s 2.575s forwards; }
+    .menu--social-media.action li:nth-of-type(6) img {
+      animation: in 0.45s 1.7s forwards, vibrantLogo 0.45s 2.7s forwards; }
+    .menu--social-media.action li:nth-of-type(7) img {
+      animation: in 0.45s 1.825s forwards, vibrantLogo 0.45s 2.825s forwards; }
+    .menu--social-media img:hover {
+      filter: brightness(100%); }
   ul.footer {
     display: flex;
     width: 200px; }
