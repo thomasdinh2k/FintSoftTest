@@ -467,26 +467,50 @@ nav {
 }
 
 @media (max-width: 425px) {
+	
+	
+	
+	
 	body {
 		// background-color: #000000;
-		background: url("https://i.pinimg.com/564x/f2/4c/b0/f24cb0e45e62ad7bf2fb9f2871ebfc7c.jpg");	
+		background: url("https://i.pinimg.com/564x/f2/4c/b0/f24cb0e45e62ad7bf2fb9f2871ebfc7c.jpg")
+			no-repeat fixed;
+
 		overflow-x: hidden; // Prevent scrolling
-	}
-
-	body::before{
-		content: '';
-		position: absolute;
+		
 		top: 0;
-		left: 0;
-		right: 0;
 		bottom: 0;
-		background-color: #000000;
-		background-size: cover;
-		filter: blur(20px);
-		opacity: .4;
+		transition: filter 0.3s ease; // Trying transition for filter
+		
+		
+		
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #000000;
+			// background-size: cover;
+			filter: blur(20px);
+			opacity: 0.5;
+			
+		}
+
+		&[data-blur="active"] {
+			// Creating a blur effect
+
+			&::before {
+				opacity: 0.7;
+				filter: none;
+			}
+
+			.sponsored {
+				display: none;
+			}
+		}
 	}
-
-
 
 	nav {
 		// background: none;
@@ -497,14 +521,13 @@ nav {
 	.hamburger-toggle {
 		display: flex;
 		justify-content: space-around;
-		
+
 		button div {
 			width: 30px;
 			height: 3px;
 			margin: 6.5px 0;
 			background-color: var(--site-white);
 		}
-		
 	}
 
 	.logo {
@@ -532,12 +555,10 @@ nav {
 		}
 	}
 
-	
-
 	video {
 		display: none;
 	}
-	
+
 	.content {
 		background: url("https://upload.wikimedia.org/wikipedia/commons/0/02/Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg");
 		background-size: cover;
@@ -559,7 +580,7 @@ nav {
 		min-height: 100vh;
 		padding-left: 20px;
 		justify-content: space-between;
-		gap:40px;
+		gap: 40px;
 
 		li a {
 			width: 279px;

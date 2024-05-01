@@ -26,6 +26,24 @@ function syncLiAttr() {
 	})
 }
 
+// Hot-fix: Make the body{} sync with the width of ul.menu
+function syncBodySize() {
+	var menu_item_height = $("ul.menu").height()
+	console.log("Current Height", menu_item_height);
+
+	$("body").height(menu_item_height)
+}
+
+// Toggle blur on open side-bar
+function toggleBlur() {
+	var body_attr = $("body").attr("data-blur")
+	if (body_attr == "active") {
+		$("body").attr("data-blur", "non-active")
+	} else {
+		$("body").attr("data-blur", "active")
+	}
+}
+
 $(document).ready(function () {
 	// [x] Open sub-menu based on nav-links
 	$(".nav-links").click(function (e) {
@@ -70,7 +88,7 @@ $(function () {
 	})
 })
 
-// [ ] Close side-bar when button click (with animation)
+// [x] Close side-bar when button click (with animation)
 $(function () {
 	var menu = $("ul.menu")
 
@@ -87,6 +105,7 @@ $(function () {
 				menu.css("display", "none") // Hide after animation
 			}
 		)
+		toggleBlur()
 	})
 
 	$(".hamburger-toggle").click(function (e) {
@@ -100,8 +119,14 @@ $(function () {
 			},
 			300
 		)
-
-		// Give the bg more blur
 		
+		// Give the bg more blur
+		toggleBlur()
 	})
+
+	// Sync body size on menu expansion
+	$("body").click(function (e) { 
+		e.preventDefault();
+		syncBodySize()
+	});
 })
