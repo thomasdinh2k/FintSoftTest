@@ -493,7 +493,7 @@ nav {
 			bottom: 0;
 			background-color: #000000;
 			// background-size: cover;
-			filter: blur(20px);
+
 			opacity: 0.5;
 			
 		}
@@ -514,8 +514,9 @@ nav {
 
 	nav {
 		// background: none;
-		background-color: var(--site-red);
+		background-color: #701f19;
 		overflow: visible;
+		box-shadow: 20px 29px 45px 0 rgba(0, 0, 0, 0.5);
 	}
 
 	.hamburger-toggle {
