@@ -20,12 +20,21 @@ body nav {
   /* background-color: aliceblue; */
   background: white;
   display: grid;
-  grid-template-columns: 2fr 7fr 1fr;
+  grid-template-columns: 2fr 9fr 2fr;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
   position: relative;
 }
 body nav .hamburger-toggle {
   display: none;
+}
+body nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body nav .logo img {
+  width: 7.5em;
+  filter: brightness(100%);
 }
 body nav .menu {
   display: flex;
@@ -104,32 +113,6 @@ body nav .menu .menu-items {
   z-index: -12;
 }
 
-.logo {
-  display: flex;
-  justify-self: center;
-  align-items: center;
-}
-
-.logo > .mobile {
-  display: none;
-}
-
-.logo span {
-  display: block;
-  /* position: absolute; */
-  font-size: 0.7em;
-  font-weight: 300;
-}
-
-.logo h2 {
-  font-size: 2vw;
-}
-
-.logo h2 span {
-  text-transform: capitalize;
-  font-size: 0.7vw;
-}
-
 /* Nice Hover animation */
 .menu-items[data-device=desktop] a.nav-links::before,
 .menu-items[data-device=desktop] a.nav-links::after {
@@ -196,8 +179,8 @@ body nav .menu .menu-items {
   /* padding: 241px 541px; Remove Later */
   position: relative;
   /* z-index: -1; */
-  padding: 20px 15px;
-  margin-top: 55px;
+  padding: 35px 40px;
+  margin-top: 60px;
   display: flex;
   border-top: 2px solid var(--site-red);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -437,12 +420,13 @@ body nav .menu .menu-items {
 }
 /* Sponsored */
 .sponsored {
-  width: 100%;
+  width: 88%;
   position: relative;
   overflow: hidden;
   transform: translateX(1000px); /* Making this disappeared */
   display: flex;
   justify-content: center;
+  align-items: center;
   animation: slideIn 0.75s 1.45s forwards;
 }
 
@@ -510,6 +494,10 @@ body nav .menu .menu-items {
     height: 3px;
     margin: 6.5px 0;
     background-color: var(--site-white);
+  }
+  body nav .logo img {
+    width: 3em;
+    filter: invert(1);
   }
   body nav .menu {
     background: var(--site-white);
@@ -837,16 +825,6 @@ body nav .menu .menu-items {
   body nav .menu-items[data-device=mobile] li[data-mobile-active=true] .arrow.down {
     transform: rotate(222deg);
     -webkit-transform: rotate(222deg);
-  }
-  .logo h2 {
-    display: none;
-  }
-  .logo .mobile {
-    display: block;
-    font-family: "Noto Serif Display", serif;
-    font-weight: 800;
-    font-size: 5.5vh;
-    color: var(--site-white);
   }
   .sponsored {
     animation: none;

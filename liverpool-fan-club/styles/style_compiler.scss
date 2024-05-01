@@ -20,12 +20,22 @@ body {
 		/* background-color: aliceblue; */
 		background: white;
 		display: grid;
-		grid-template-columns: 2fr 7fr 1fr;
+		grid-template-columns: 2fr 9fr 2fr;
 		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
 		position: relative;
 
 		.hamburger-toggle {
 			display: none;
+		}
+
+		.logo {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			img {
+				width: 7.5em;
+				filter: brightness(100%);
+			}
 		}
 
 		.menu {
@@ -115,32 +125,6 @@ body {
 	z-index: -12;
 }
 
-.logo {
-	display: flex;
-	justify-self: center;
-	align-items: center;
-}
-
-.logo > .mobile {
-	display: none;
-}
-
-.logo span {
-	display: block;
-	/* position: absolute; */
-	font-size: 0.7em;
-	font-weight: 300;
-}
-
-.logo h2 {
-	font-size: 2vw;
-}
-
-.logo h2 span {
-	text-transform: capitalize;
-	font-size: 0.7vw;
-}
-
 /* Nice Hover animation */
 
 .menu-items[data-device="desktop"] a.nav-links::before,
@@ -210,8 +194,8 @@ body {
 
 	position: relative;
 	/* z-index: -1; */
-	padding: 20px 15px;
-	margin-top: 55px;
+	padding: 35px 40px;
+	margin-top: 60px;
 	display: flex;
 	border-top: 2px solid var(--site-red);
 	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -468,12 +452,13 @@ body {
 
 /* Sponsored */
 .sponsored {
-	width: 100%;
+	width: 88%;
 	position: relative;
 	overflow: hidden;
 	transform: translateX(1000px); /* Making this disappeared */
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	animation: slideIn 0.75s 1.45s forwards;
 }
 
@@ -553,6 +538,13 @@ body {
 				}
 			}
 
+			.logo {
+				img {
+					width: 3em;
+					filter: invert(1);
+				}
+			}
+
 			.menu {
 				background: var(--site-white);
 				display: none;
@@ -564,7 +556,7 @@ body {
 				width: 80%;
 				z-index: 999;
 				min-height: 100vh;
-				height:auto;
+				height: auto;
 				padding-left: 20px;
 				justify-content: space-between;
 				gap: 40px;
@@ -743,12 +735,12 @@ body {
 				.mobile.footer {
 					display: flex;
 					width: 200px;
-	
+
 					li:first-child a {
 						font-weight: bolder;
 						padding-left: 0;
 					}
-	
+
 					li a {
 						font-size: 0.5rem;
 					}
@@ -962,22 +954,6 @@ body {
 					}
 				}
 			}
-
-			
-		}
-	}
-
-	.logo {
-		h2 {
-			display: none;
-		}
-
-		.mobile {
-			display: block;
-			font-family: "Noto Serif Display", serif;
-			font-weight: 800;
-			font-size: 5.5vh;
-			color: var(--site-white);
 		}
 	}
 
