@@ -1,35 +1,22 @@
-function closeAll(except) {
-	$(".wrapper").each(function () {
-		if (this !== except) {
-			$(this).attr({
-				"aria-expanded": false,
-				"aria-hidden": true,
-			})
+function closeAll(exception) {
+	$(".menu-items > li").each(function () {
+		// if ($(this).is(exception)) {
+				
+		if ($(this).is(exception)) {
+			console.log("same")
+		} else {
+			$(this).removeClass("show")
 		}
 	})
 }
 
-// [x] Check if .wrapper have aria-expanded="true", if so, give <li> an attr of "mobile active" and style CSS with it
-function syncLiAttr() {
-	// Find Wrapper
-	$(".wrapper").each(function () {
-		var currentAttr = $(this).attr("aria-expanded")
-
-		// DOM travel back to <li>
-		var parent = $(this).parent()
-
-		if (currentAttr === "true") {
-			parent.attr("data-mobile-active", true)
-		} else if (currentAttr === "false") {
-			parent.attr("data-mobile-active", false)
-		}
-	})
-}
+// Check if .wrapper have aria-expanded="true", if so, give <li> an attr of "mobile active" and style CSS with it
+// Deleted
 
 // Hot-fix: Make the body{} sync with the width of ul.menu
 function syncBodySize() {
 	var menu_item_height = $("ul.menu").height()
-	console.log("Current Height", menu_item_height);
+	console.log("Current Height", menu_item_height)
 
 	$("body").height(menu_item_height)
 }
@@ -46,34 +33,17 @@ function toggleBlur() {
 
 $(document).ready(function () {
 	// [x] Open sub-menu based on nav-links
-	$(".nav-links").click(function (e) {
+	$(".menu-items > li").click(function (e) {
 		e.preventDefault()
-
-		// Find .wrapper
-		var wrapper = $(this).next(".wrapper")
-		var isExpanded = wrapper.attr("aria-expanded") === "true"
 
 		// Close all sub-menu first!
 		closeAll($(this))
 
-		$(wrapper).attr({
-			"aria-expanded": !isExpanded,
-			"aria-hidden": isExpanded,
-		})
-
-		syncLiAttr()
+		$(this).toggleClass("show")
 	})
 
-	// [x] Check if viewport > 425 then remove <div data-device="mobile" class="mobile menu-items">
-	var currentWidth = $(document).width()
-	console.log(`Current viewport is ${currentWidth}`)
-	$("#viewport-info").html(currentWidth)
-
-	if (currentWidth > 425) {
-		$(".menu-items").attr("data-device", "desktop")
-	} else {
-		$(".menu-items").attr("data-device", "mobile")
-	}
+	// Check if viewport > 425 then remove <div data-device="mobile" class="mobile menu-items">
+	// Deleted
 })
 
 // Animate social-icons on scroll
@@ -92,7 +62,7 @@ $(function () {
 $(function () {
 	var menu = $("ul.menu")
 
-	$(".mobile.menu--header button").click(function (e) {
+	$(".menu--header button").click(function (e) {
 		e.preventDefault()
 		// Hide menu
 		menu.animate(
@@ -119,16 +89,16 @@ $(function () {
 			},
 			300
 		)
-		
+
 		// Give the bg more blur
 		toggleBlur()
 	})
 
 	// Sync body size on menu expansion
-	$("body").click(function (e) { 
-		e.preventDefault();
+	$("body").click(function (e) {
+		e.preventDefault()
 		syncBodySize()
-	});
+	})
 })
 
 // Using Js to animate specifically
@@ -137,4 +107,4 @@ $(function () {
 		// element == this
 		$(element).css("animation-delay", `${0.15 * index}s`)
 	})
-});
+})

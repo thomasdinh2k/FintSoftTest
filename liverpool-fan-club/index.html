@@ -22,17 +22,18 @@
 			rel="stylesheet"
 			href="path/to/font-awesome/css/font-awesome.min.css"
 		/>
-		<link
+
+		<!-- Turn on later -->
+		<!-- <link
 			href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css"
 			rel="stylesheet"
-		/>
+		/> --> 
 		<!-- Reset CSS -->
 		<link rel="stylesheet" href="../reset.css" />
 		<!-- Normal CSS Import -->
 		<link rel="stylesheet" href="./styles/style_compiler.css" />
 
-
-		<link rel="icon" href="./icon/lfc-crest.png"/>
+		<link rel="icon" href="./icon/lfc-crest.png" />
 
 		<!-- Javascript -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -54,7 +55,7 @@
 			</div>
 
 			<div class="logo">
-				<img src="./icon/lfc-crest.png" alt="">
+				<img src="./icon/lfc-crest.png" alt="" />
 
 				<!-- <span class="mobile">LFC</span> -->
 			</div>
@@ -77,7 +78,7 @@
 			</div>
 
 			<ul class="menu">
-				<div class="mobile menu--header">
+				<div class="menu--header">
 					<p>LFC</p>
 					<button>
 						<svg
@@ -99,17 +100,12 @@
 						</svg>
 					</button>
 				</div>
-				<div data-device="mobile" class="mobile menu-items">
-					<li data-mobile-active="false">
-						<a class="nav-links" aria-haspopup="true" href="#"
+				<div class="menu-items">
+					<li>
+						<a class="nav-links" href="#"
 							>Lịch thi đấu <span class="arrow down"></span
 						></a>
-						<div
-							class="wrapper"
-							aria-hidden="true"
-							aria-expanded="false"
-							aria-label="agenda submenu"
-						>
+						<div class="wrapper">
 							<ul class="sub-menu">
 								<div class="sub-menu__links">
 									<ul class="sub-menu__col">
@@ -150,16 +146,11 @@
 						</div>
 					</li>
 
-					<li data-mobile-active="false">
-						<a class="nav-links" aria-haspopup="true" href="#"
+					<li>
+						<a class="nav-links" href="#"
 							>Đội hình & Cầu thủ <span class="arrow down"></span
 						></a>
-						<div
-							class="wrapper"
-							aria-hidden="true"
-							aria-expanded="false"
-							aria-label="teamXL submenu"
-						>
+						<div class="wrapper">
 							<ul class="sub-menu">
 								<div class="sub-menu__links">
 									<ul class="sub-menu__col">
@@ -198,16 +189,11 @@
 						</div>
 					</li>
 
-					<li data-mobile-active="false">
-						<a class="nav-links" aria-haspopup="true" href="#"
+					<li>
+						<a class="nav-links" href="#"
 							>Quà lưu niệm <span class="arrow down"></span
 						></a>
-						<div
-							class="wrapper"
-							aria-hidden="true"
-							aria-expanded="false"
-							aria-label="souvenir submenu"
-						>
+						<div class="wrapper">
 							<ul class="sub-menu">
 								<div class="sub-menu__links">
 									<ul class="sub-menu__col">
@@ -247,16 +233,11 @@
 						</div>
 					</li>
 
-					<li data-mobile-active="false">
-						<a class="nav-links" aria-haspopup="true" href="#"
+					<li>
+						<a class="nav-links" href="#"
 							>Lịch sử CLB <span class="arrow down"></span
 						></a>
-						<div
-							class="wrapper"
-							aria-hidden="true"
-							aria-expanded="false"
-							aria-label="history submenu"
-						>
+						<div class="wrapper">
 							<ul class="sub-menu">
 								<div class="sub-menu__links">
 									<ul class="sub-menu__col">
@@ -339,16 +320,11 @@
 						</div>
 					</li>
 
-					<li data-mobile-active="false">
-						<a class="nav-links" aria-haspopup="true" href="#"
+					<li>
+						<a class="nav-links" href="#"
 							>khoá học bóng đá <span class="arrow down"></span
 						></a>
-						<div
-							class="wrapper"
-							aria-hidden="true"
-							aria-expanded="false"
-							aria-label="coures submenu"
-						>
+						<div class="wrapper">
 							<ul class="sub-menu">
 								<div class="sub-menu__links">
 									<ul class="sub-menu__col">
@@ -387,16 +363,11 @@
 						</div>
 					</li>
 
-					<li data-mobile-active="false">
-						<a class="nav-links" aria-haspopup="true" href="#"
+					<li>
+						<a class="nav-links" href="#"
 							>Sự kiện mới<span class="arrow down"></span
 						></a>
-						<div
-							class="wrapper"
-							aria-hidden="true"
-							aria-expanded="false"
-							aria-label="events submenu"
-						>
+						<div class="wrapper">
 							<ul class="sub-menu">
 								<div class="sub-menu__links">
 									<ul class="sub-menu__col">
@@ -442,7 +413,7 @@
 					</li>
 				</div>
 
-				<div class="mobile menu--register-box">
+				<div class="menu--register-box">
 					<h2 class="hook">đăng ký tài khoản MYLFC chính thức, miễn phí</h2>
 					<p>
 						Nhận ngay những ưu đãi độc quyền bao gồm video, livestream và bình
@@ -451,18 +422,18 @@
 					<button>Đăng ký ngay<span class="arrow right"></span></button>
 				</div>
 
-				<p class="mobile already-registered" style="color: #595959">
+				<p class="already-registered" style="color: #595959">
 					<strong>Đã có tài khoản?</strong> <a>Đăng nhập</a>
 				</p>
 
-				<div class="mobile menu--language-switcher">
+				<div class="menu--language-switcher">
 					<!-- [ ] Replace flag -->
 					<img src="./icon/vn-flag.png" alt="" />
 					<strong>Tiếng Việt</strong>
 					<!-- <span class="arrow right"></span> -->
 				</div>
 
-				<ul class="mobile menu--social-media">
+				<ul class="menu--social-media">
 					<li>
 						<a href="">
 							<img src="./icon/social-icons/fb.png" alt="" />
@@ -501,7 +472,7 @@
 				</ul>
 
 				<!-- /* [ ] Replace correct social media icon */ -->
-				<ul class="mobile footer">
+				<ul class="footer">
 					<li>
 						<a href=""><strong>trợ giúp</strong></a>
 					</li>
@@ -517,9 +488,9 @@
 		</nav>
 
 		<div class="content">
-			<video autoplay loop muted>
+			<!-- <video autoplay loop muted>
 				<source id="video" src="./we-are-liverpool.mp4" type="video/mp4" />
-			</video>
+			</video> -->
 		</div>
 	</body>
 </html>
