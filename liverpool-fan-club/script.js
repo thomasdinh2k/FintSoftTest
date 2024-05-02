@@ -130,3 +130,11 @@ $(function () {
 		syncBodySize()
 	});
 })
+
+// Using Js to animate specifically
+$(function () {
+	$(".nav-links").each(function (index, element) {
+		// element == this
+		$(element).css("animation-delay", `${0.15 * index}s`)
+	})
+});
