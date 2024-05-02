@@ -65,24 +65,6 @@ body nav .menu .nav-links {
   animation: slideIn 1s forwards;
   color: black;
 }
-body nav .menu li:nth-child(1) .nav-links {
-  animation-delay: 0s;
-}
-body nav .menu li:nth-child(2) .nav-links {
-  animation-delay: calc(0.15s * 2);
-}
-body nav .menu li:nth-child(3) .nav-links {
-  animation-delay: calc(0.15s * 3);
-}
-body nav .menu li:nth-child(4) .nav-links {
-  animation-delay: calc(0.15s * 4);
-}
-body nav .menu li:nth-child(5) .nav-links {
-  animation-delay: calc(0.15s * 5);
-}
-body nav .menu li:nth-child(6) .nav-links {
-  animation-delay: calc(0.15s * 6);
-}
 body nav .menu .mobile.menu--header {
   display: none;
 }

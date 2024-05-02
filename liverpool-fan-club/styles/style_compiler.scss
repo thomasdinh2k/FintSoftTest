@@ -74,18 +74,17 @@ body {
 				color: black;
 			}
 
-			$nav-items: 6;
+			// $nav-items: 6;
+			// li:nth-child(1) .nav-links {
+			// 	animation-delay: 0s;
+			// }
 
-			li:nth-child(1) .nav-links {
-				animation-delay: 0s;
-			}
-
-			@for $i from 2 through $nav-items {
-				li:nth-child(#{$i}) .nav-links{
-					// animation-delay: calc(0.15 * $i)s;
-					animation-delay: calc(0.15s * #{$i});
-				}
-			}
+			// @for $i from 2 through $nav-items {
+			// 	li:nth-child(#{$i}) .nav-links{
+			// 		// animation-delay: calc(0.15 * $i)s;
+			// 		animation-delay: calc(0.15s * #{$i});
+			// 	}
+			// }
 
 			// Remove content which belongs to mobile version
 			.mobile.menu--header {
