@@ -32,6 +32,7 @@ body {
 			display: flex;
 			align-items: center;
 			justify-content: center;
+
 			img {
 				width: 7.5em;
 				filter: brightness(100%);
@@ -46,8 +47,6 @@ body {
 			list-style-type: none;
 
 			height: 150px;
-			/* position: relative;
-		z-index: 200; */
 
 			li a {
 				text-transform: uppercase;
@@ -61,22 +60,54 @@ body {
 				transition: all 0.3s;
 			}
 
+			/* Animation */
+
+			.nav-links {
+				/* Correct selector */
+				/* background-color: aliceblue; */
+				display: inline-block;
+				/* using in-line block because <a> tag itself can't be transform */
+				list-style: none;
+				transform: translateX(1000px);
+				/* Making this disappeared */
+				animation: slideIn 1s forwards;
+				color: black;
+			}
+
+			$nav-items: 6;
+
+			li:nth-child(1) .nav-links {
+				animation-delay: 0s;
+			}
+
+			@for $i from 2 through $nav-items {
+				li:nth-child(#{$i}) .nav-links{
+					// animation-delay: calc(0.15 * $i)s;
+					animation-delay: calc(0.15s * #{$i});
+				}
+			}
+
 			// Remove content which belongs to mobile version
 			.mobile.menu--header {
 				display: none;
 			}
+
 			.mobile.menu--register-box {
 				display: none;
 			}
+
 			.already-registered {
 				display: none;
 			}
+
 			.mobile.menu--language-switcher {
 				display: none;
 			}
+
 			.mobile.menu--social-media {
 				display: none;
 			}
+
 			.mobile.footer {
 				display: none;
 			}
@@ -136,7 +167,8 @@ body {
 	width: 100%;
 	height: 2px;
 	left: 0;
-	transform: scaleX(0); /* hide the element for animation */
+	transform: scaleX(0);
+	/* hide the element for animation */
 	transition: all 0.5s;
 }
 
@@ -291,39 +323,10 @@ body {
 	max-height: 300px;
 }
 
-/* Animation */
-
-.nav-links {
-	/* Correct selector */
-	/* background-color: aliceblue; */
-	display: inline-block; /* using in-line block because <a> tag itself can't be transform */
-	list-style: none;
-	transform: translateX(1000px); /* Making this disappeared */
-	animation: slideIn 1s forwards;
-	color: black;
-}
-.menu li:nth-child(1) .nav-links {
-	animation-delay: 0s;
-}
-.menu li:nth-child(2) .nav-links {
-	animation-delay: calc(0.15 * 1s);
-}
-.menu li:nth-child(3) .nav-links {
-	animation-delay: calc(0.15 * 2s);
-}
-.menu li:nth-child(4) .nav-links {
-	animation-delay: calc(0.15 * 3s);
-}
-.menu li:nth-child(5) .nav-links {
-	animation-delay: calc(0.15 * 4s);
-}
-.menu li:nth-child(6) .nav-links {
-	animation-delay: calc(0.15 * 5s);
-}
-
 @keyframes slideIn {
 	from {
 	}
+
 	to {
 		transform: translateX(0);
 	}
@@ -332,6 +335,7 @@ body {
 @keyframes slideInTrophies {
 	from {
 	}
+
 	to {
 		transform: translateX(-50%) translateY(2px);
 	}
@@ -340,6 +344,7 @@ body {
 @keyframes slightlyDownTrophies {
 	from {
 	}
+
 	to {
 		transform: translateX(0) translateY(4px);
 	}
@@ -348,6 +353,7 @@ body {
 @keyframes BlackenElement {
 	from {
 	}
+
 	to {
 		filter: brightness(0);
 	}
@@ -358,11 +364,13 @@ body {
 		transform: translateY(-60px);
 		opacity: 0;
 	}
+
 	100% {
 		transform: translateY(0);
 		opacity: 1;
 	}
 }
+
 /* Hall of fame */
 .hall-of-fame {
 	position: absolute;
@@ -430,10 +438,13 @@ body {
 		transform: translateX(-50%) translateY(100%);
 		opacity: 0;
 	}
+
 	50% {
-		transform: translateX(-50%) translateY(-10%); /* Slightly overshoots the target */
+		transform: translateX(-50%) translateY(-10%);
+		/* Slightly overshoots the target */
 		opacity: 0.7;
 	}
+
 	100% {
 		transform: translateX(-50%) translateY(0);
 		opacity: 1;
@@ -455,7 +466,8 @@ body {
 	width: 88%;
 	position: relative;
 	overflow: hidden;
-	transform: translateX(1000px); /* Making this disappeared */
+	transform: translateX(1000px);
+	/* Making this disappeared */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -526,6 +538,7 @@ body {
 			box-shadow: 20px 29px 45px 0 rgba(0, 0, 0, 0.5);
 			border-radius: 2px;
 			grid-template-columns: 1fr 1fr 1fr;
+
 			.hamburger-toggle {
 				display: flex;
 				justify-content: space-around;
@@ -633,6 +646,7 @@ body {
 					background: var(--site-red);
 					padding: 30px 15px;
 					color: white;
+
 					h2 {
 						font-weight: 700;
 						font-size: 1rem;
@@ -673,6 +687,7 @@ body {
 					flex-direction: row;
 					justify-content: space-between;
 					border-bottom: 1px solid var(--site-grey);
+
 					img {
 						width: 24px;
 						height: 16px;
@@ -701,6 +716,7 @@ body {
 					@keyframes vibrantLogo {
 						from {
 						}
+
 						to {
 							filter: grayscale(0) brightness(90%);
 						}
@@ -767,6 +783,7 @@ body {
 				/* background: var(--site-grey); */
 				/* border: 2px solid lightcyan; Temp */
 			}
+
 			.mobile .sub-menu__picture {
 				display: none;
 			}
@@ -899,6 +916,7 @@ body {
 					left: -100%;
 					opacity: 0;
 				}
+
 				to {
 					left: 0;
 					opacity: 1;
@@ -914,14 +932,14 @@ body {
 
 			@for $i from 1 through $nav-sub-menu__col {
 				ul.sub-menu__col:nth-of-type(#{$i}) {
-					animation: in 0.45s 0.25s + $i/8 forwards;
+					animation: in 0.45s 0.25s + calc($i/8) forwards;
 					-webkit-transition-timing-function: cubic-bezier(
 						0.68,
 						-0.55,
 						0.265,
 						1.55
 					);
-					-moz-animation: in 0.15s 0.45s + $i/8 forwards;
+					-moz-animation: in 0.15s 0.45s + calc($i/8) forwards;
 					-moz-transition-timing-function: cubic-bezier(
 						0.68,
 						-0.55,
@@ -960,6 +978,7 @@ body {
 	.sponsored {
 		animation: none;
 		transform: translateX(0);
+
 		img {
 			animation: none;
 			filter: brightness(10000%) contrast(10000%); // Completely whiten an image
@@ -976,6 +995,7 @@ body {
 		background: url("https://upload.wikimedia.org/wikipedia/commons/0/02/Panorama_of_Anfield_with_new_main_stand_%2829676137824%29.jpg");
 		background-size: cover;
 	}
+
 	.arrow.down {
 		padding: 0.2rem;
 	}
