@@ -10,9 +10,6 @@ function closeAll(exception) {
 	})
 }
 
-// Check if .wrapper have aria-expanded="true", if so, give <li> an attr of "mobile active" and style CSS with it
-// Deleted
-
 // Hot-fix: Make the body{} sync with the width of ul.menu
 function syncBodySize() {
 	var menu_item_height = $("ul.menu").height()
@@ -59,40 +56,74 @@ $(function () {
 })
 
 // [x] Close side-bar when button click (with animation)
-$(function () {
+function hideMenu(menu) { 
+	menu.animate(
+		{
+			left: "-100%",
+			opacity: 0,
+		},
+		300,
+		function () {
+			menu.css("display", "none") // Hide after animation
+		}
+	)
+	toggleBlur()
+ }
+
+function showMenu(menu) {
+	menu.css({ display: "flex", left: "-100%", opacity: 0 }) // Set initial position
+	menu.animate(
+		{
+			left: "0",
+			opacity: 1,
+		},
+		300
+	)
+
+	// Give the bg more blur
+	toggleBlur()
+}
+
+ $(function () {
 	var menu = $("ul.menu")
 
 	$(".menu--header button").click(function (e) {
 		e.preventDefault()
 		// Hide menu
-		menu.animate(
-			{
-				left: "-100%",
-				opacity: 0,
-			},
-			300,
-			function () {
-				menu.css("display", "none") // Hide after animation
-			}
-		)
-		toggleBlur()
+		hideMenu(menu)
 	})
 
 	$(".hamburger-toggle").click(function (e) {
 		e.preventDefault()
 		// Show menu
-		menu.css({ display: "flex", left: "-100%", opacity: 0 }) // Set initial position
-		menu.animate(
-			{
-				left: "0",
-				opacity: 1,
-			},
-			300
-		)
-
-		// Give the bg more blur
-		toggleBlur()
+		showMenu(menu)
 	})
+
+	// [ ] Hide menu when clicking outside of it
+	// $(document).click(function (e) {
+	// 	if (
+	// 		!$(menu_icon_box).is(e.target) &&
+	// 		$(menu_icon_box).has(e.target).length === 0 &&
+	// 		!$(box).is(e.target) &&
+	// 		$(box).has(e.target).length === 0
+	// 	) {
+	// 		$(menu_icon_box).removeClass("active")
+	// 		$(box).removeClass("active_box")
+	// 	}
+	// })
+
+	$(document).click(function (e) { 
+		e.preventDefault();
+		
+		console.log(e.target);
+		
+		if ($("body").is(e.target)) {
+			// The event target is outside of nav
+			console.log("Outside Clicked");
+			hideMenu(menu)
+		}
+	});
+
 
 	// Sync body size on menu expansion
 	$("body").click(function (e) {
