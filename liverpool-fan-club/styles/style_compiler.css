@@ -268,11 +268,12 @@ body nav .menu .footer {
 }
 @keyframes slideInTrophies {
   to {
-    transform: translateX(-50%) translateY(2px);
+    transform: translateX(-50%);
   }
 }
 @keyframes slightlyDownTrophies {
   to {
+    top: 100%;
     transform: translateX(0) translateY(4px);
   }
 }
@@ -295,7 +296,7 @@ body nav .menu .footer {
 .hall-of-fame {
   position: absolute;
   display: flex;
-  top: 98%;
+  top: 100%;
   min-width: -moz-max-content;
   min-width: max-content;
   z-index: -11;
@@ -306,7 +307,7 @@ body nav .menu .footer {
   justify-content: center;
   font-weight: bold;
   left: 50%;
-  transform: translateX(-50%) translateY(-70px);
+  transform: translateX(-50%) translateY(-100%);
   animation: slideInTrophies 0.8s 1.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
