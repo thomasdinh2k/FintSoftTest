@@ -82,14 +82,12 @@ body nav .menu .menu-items li .wrapper {
 }
 body nav .menu .menu-items li .wrapper .sub-menu {
   background-color: whitesmoke;
-  /* position: absolute; */
-  /* padding: 241px 541px; Remove Later */
   list-style-type: none;
   text-transform: capitalize;
   position: relative;
   /* z-index: -1; */
   padding: 35px 40px;
-  margin-top: 60px;
+  margin-top: 78px;
   display: flex;
   border-top: 2px solid var(--site-red);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
@@ -115,6 +113,7 @@ body nav .menu .menu-items li .wrapper .sub-menu .sub-menu__links .sub-menu__col
   padding-block: 10px;
   border-radius: 0;
   padding: 10px 0;
+  text-decoration: none;
 }
 body nav .menu .menu-items li .wrapper .sub-menu .sub-menu__links .sub-menu__col:hover a {
   color: red;
@@ -412,9 +411,9 @@ body nav .menu .footer {
     background: url("https://i.pinimg.com/564x/f2/4c/b0/f24cb0e45e62ad7bf2fb9f2871ebfc7c.jpg") no-repeat fixed;
     overflow-x: hidden;
     background-size: cover;
-    top: 0;
-    bottom: 0;
+    position: static;
     transition: filter 0.3s ease;
+    margin-block: 0px;
   }
   body::before {
     content: "";
@@ -424,14 +423,12 @@ body nav .menu .footer {
     right: 0;
     bottom: 0;
     background-color: #000000;
+    height: inherit;
     opacity: 0.5;
   }
   body[data-blur=active]::before {
     opacity: 0.7;
     filter: none;
-  }
-  body[data-blur=active] .sponsored {
-    display: none;
   }
   body nav {
     background-color: #701f19;
@@ -439,11 +436,18 @@ body nav .menu .footer {
     box-shadow: 20px 29px 45px 0 rgba(0, 0, 0, 0.5);
     border-radius: 2px;
     grid-template-columns: 1fr 1fr 1fr;
+    position: absolute;
+    top: 0;
+    left: 0;
     /* [x] Sub-menu slide animation */
   }
   body nav .hamburger-toggle {
     display: flex;
     justify-content: space-around;
+  }
+  body nav .hamburger-toggle button {
+    background-color: transparent;
+    border: none;
   }
   body nav .hamburger-toggle button div {
     width: 30px;
@@ -463,13 +467,13 @@ body nav .menu .footer {
     position: absolute;
     top: 0;
     left: 0;
-    width: 80%;
     z-index: 999;
     min-height: 100vh;
     height: auto;
     padding-left: 20px;
     justify-content: space-between;
     gap: 40px;
+    margin-block-start: 0px;
   }
   body nav .menu .nav-links {
     display: flex;
@@ -481,17 +485,15 @@ body nav .menu .footer {
     padding-left: 0;
   }
   body nav .menu .menu--header {
-    width: 95%;
-    height: 10%;
+    position: sticky;
+    top: 0;
+    left: 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     color: var(--site-red);
     border-bottom: 1px solid rgb(160, 164, 168);
-    position: sticky;
-    top: 0;
-    left: 0;
     width: var(--phone-nav-width);
     background-color: var(--site-white);
     z-index: 999;
@@ -509,6 +511,10 @@ body nav .menu .footer {
     max-width: 69vw;
     position: relative;
     /* border: 1px solid salmon; Temp */
+  }
+  body nav .menu .menu--header button {
+    border: none;
+    background-color: var(--site-white);
   }
   body nav .menu .menu--header button svg {
     color: var(--site-red);
@@ -542,15 +548,6 @@ body nav .menu .footer {
     left: 0;
     transform: scaleX(0);
     transition: all 0.8s;
-  }
-  body nav .menu .menu-items li .wrapper[aria-hidden=true] {
-    display: none;
-  }
-  body nav .menu .menu-items li .wrapper[aria-hidden=true] .sub-menu {
-    display: none;
-  }
-  body nav .menu .menu-items li .wrapper[aria-expanded=true] {
-    padding-top: 0;
   }
   body nav .menu .menu-items li .wrapper .sub-menu {
     padding: 5px 2px;
@@ -591,7 +588,7 @@ body nav .menu .footer {
   body nav .menu .menu-items li .wrapper .sub-menu .sub-menu__links .sub-menu__col a {
     /* [x] Fix: Border-top is being conflict with animation */
     padding: 0px;
-    width: 10px;
+    width: auto;
     font-size: 0.7em;
     border-radius: 0;
     border-bottom: 1.5px solid var(--site-grey);
@@ -599,8 +596,15 @@ body nav .menu .footer {
   body nav .menu .menu-items li.show {
     /* Alter sub-menu active animation */
   }
-  body nav .menu .menu-items li.show .sub-menu {
-    display: flex;
+  body nav .menu .menu-items li.show .wrapper {
+    padding-top: 0;
+    display: block;
+    position: relative;
+    top: -3px;
+    left: 0;
+  }
+  body nav .menu .menu-items li.show .wrapper .sub-menu {
+    display: block;
     height: 100%;
   }
   body nav .menu .menu-items li.show .nav-links {
@@ -649,6 +653,7 @@ body nav .menu .footer {
     padding: 20px 40px 20px 20px;
     background: black;
     text-transform: uppercase;
+    color: var(--site-white);
   }
   body nav .menu .menu--register-box .arrow,
   body nav .menu .menu--register-box .right {
@@ -692,6 +697,8 @@ body nav .menu .footer {
     width: var(--phone-nav-width);
     grid-template-columns: repeat(7, 1fr);
     gap: 10px;
+    list-style-type: none;
+    padding: 0;
   }
   @keyframes vibrantLogo {
     to {
@@ -730,6 +737,13 @@ body nav .menu .footer {
   body nav .menu .footer {
     display: flex;
     width: 200px;
+    list-style-type: none;
+    padding: 0;
+    text-transform: uppercase;
+    gap: 20px;
+  }
+  body nav .menu .footer a {
+    text-decoration: none;
   }
   body nav .menu .footer li:first-child a {
     font-weight: bolder;
