@@ -1,7 +1,7 @@
 function closeAll(exception) {
 	$(".menu-items > li").each(function () {
 		// if ($(this).is(exception)) {
-				
+
 		if ($(this).is(exception)) {
 			console.log("same")
 		} else {
@@ -56,7 +56,7 @@ $(function () {
 })
 
 // [x] Close side-bar when button click (with animation)
-function hideMenu(menu) { 
+function hideMenu(menu) {
 	menu.animate(
 		{
 			left: "-100%",
@@ -68,7 +68,7 @@ function hideMenu(menu) {
 		}
 	)
 	toggleBlur()
- }
+}
 
 function showMenu(menu) {
 	menu.css({ display: "flex", left: "-100%", opacity: 0 }) // Set initial position
@@ -84,7 +84,7 @@ function showMenu(menu) {
 	toggleBlur()
 }
 
- $(function () {
+$(function () {
 	var menu = $("ul.menu")
 
 	$(".menu--header button").click(function (e) {
@@ -99,36 +99,23 @@ function showMenu(menu) {
 		showMenu(menu)
 	})
 
-	// [ ] Hide menu when clicking outside of it
-	// $(document).click(function (e) {
-	// 	if (
-	// 		!$(menu_icon_box).is(e.target) &&
-	// 		$(menu_icon_box).has(e.target).length === 0 &&
-	// 		!$(box).is(e.target) &&
-	// 		$(box).has(e.target).length === 0
-	// 	) {
-	// 		$(menu_icon_box).removeClass("active")
-	// 		$(box).removeClass("active_box")
-	// 	}
-	// })
+	// [x] Hide menu when clicking outside of it
+	$(document).click(function (e) {
+		e.preventDefault()
 
-	$(document).click(function (e) { 
-		e.preventDefault();
-		
-		console.log(e.target);
-		
+		console.log(e.target)
+
 		if ($("body").is(e.target)) {
 			// The event target is outside of nav
-			console.log("Outside Clicked");
+			console.log("Outside Clicked")
 			hideMenu(menu)
 		}
-	});
-
+	})
 
 	// Sync body size on menu expansion
 	$("body").click(function (e) {
 		e.preventDefault()
-		syncBodySize()
+		// syncBodySize()
 	})
 })
 

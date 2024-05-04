@@ -1,9 +1,22 @@
+// Desktop
+// [ ] fix mui ten
+// [ ] sub-menu quá hẹp
+// [ ] key-frame hall-off-frame on hover cho mượt
+// [ ] height của menu-bar quá rộng (height)
+
+// [ ] áp dụng cấu trúc responsive theo Bootstrap
+// < 992 go mobile
+
+// Mobile
+// [ ] body nav thử bỏ grid và style thuần bằng padding
+// [ ] Hiện tại đang scroll cả body chứ không phải scroll nội dung
+
 :root {
 	--site-red: #dc2214;
 	--site-yellow: #d5daa5;
 	--site-white: #f5f5f5;
 	--site-grey: #ccc;
-	--phone-nav-width: 70vw;
+	--phone-nav-width: 70vw;		
 }
 
 html {
@@ -17,12 +30,12 @@ body {
 	z-index: -99;
 
 	nav {
-		/* background-color: aliceblue; */
-		background: white;
-		display: grid;
-		grid-template-columns: 2fr 9fr 2fr;
-		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+		display: flex;
 		position: relative;
+		align-items: center;
+		justify-content: space-around;
+		box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+		background: white;
 
 		.hamburger-toggle {
 			display: none;
@@ -32,9 +45,9 @@ body {
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			width: 10vw;
 
 			img {
-				width: 7.5em;
 				filter: brightness(100%);
 			}
 		}
@@ -52,7 +65,8 @@ body {
 			.nav-links {
 				/* Correct selector */
 				/* background-color: aliceblue; */
-				display: inline-block;
+				display: flex;
+				align-items: center;
 				/* using in-line block because <a> tag itself can't be transform */
 				list-style: none;
 				transform: translateX(1000px);
@@ -104,15 +118,17 @@ body {
 
 			.menu-items {
 				display: flex;
-
+				gap: 2vw;
 				li {
 					// Hide nav-bar items
 					.wrapper {
 						/* z-index: -777; */
 						display: none;
-						position: fixed;
+						// [x] sub-menu bị trôi theo scroll (sửa position: fixed)
+						position: absolute;
 						/* top: 55px; */
 						transform: translateY(-100%);
+						top: 105%;
 						left: 100px;
 						right: 100px;
 						/* background-color: aliceblue; */
@@ -124,16 +140,17 @@ body {
 
 						/* Sub-Menu */
 						.sub-menu {
-							background-color: whitesmoke;
+							display: flex;
+							position: relative;
+							overflow: hidden;
+							top: -1px;
 							list-style-type: none;
 							text-transform: capitalize;
-							position: relative;
 							/* z-index: -1; */
 							padding: 35px 40px;
-							margin-top: 78px;
-							display: flex;
 							border-top: 2px solid var(--site-red);
 							box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+							background-color: whitesmoke;
 
 							justify-content: space-between;
 							/* animation: slideDownSub 2s cubic-bezier(.39,-1.05,.58,1.95); */
@@ -174,6 +191,7 @@ body {
 									}
 
 									li {
+										list-style-type: none;
 										padding-top: 15px;
 										.caption {
 											display: block;
@@ -187,12 +205,12 @@ body {
 										}
 									}
 								}
+							}
 
-								.sub-menu__picture {
-									img {
-										max-width: 300px;
-										max-height: 300px;
-									}
+							.sub-menu__picture {
+								img {
+									max-width: 300px;
+									max-height: 300px;
 								}
 							}
 						}
@@ -266,41 +284,35 @@ body {
 	}
 }
 
-#video {
-	width: 100vw;
-	height: 100vh;
-	object-fit: cover;
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-}
-
-.content video {
-	min-height: 100%;
-	min-width: 100%;
-}
-
-.content::after {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	position: absolute;
-
-	background-color: var(--site-red);
-	background-image: linear-gradient(to bottom, salmon, #000000);
-	opacity: 0.4;
-	mix-blend-mode: difference;
-	z-index: 0;
-}
-
 .content {
+	overflow: hidden;
 	position: relative;
 	z-index: -12;
+
+	video {
+		// min-height: 100%;
+		// min-width: 100%;
+		height: 100%;
+		width: -webkit-fill-available;
+	}
+
+	// [ ] Fix height của content bị overflow
+	&::after {
+		// Darken video for content visibility
+		content: "";
+		display: block;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		position: absolute;
+
+		// background-color: var(--site-red);
+		background-image: linear-gradient(to bottom, salmon, #000000);
+		opacity: 0.4;
+		mix-blend-mode: difference;
+		z-index: 0;
+	}
 }
 
 /* Arrow things */
@@ -364,7 +376,6 @@ body {
 
 @keyframes slightlyDownTrophies {
 	from {
-		
 	}
 
 	to {
@@ -486,7 +497,6 @@ body {
 
 /* Sponsored */
 .sponsored {
-	width: 88%;
 	position: relative;
 	overflow: hidden;
 	transform: translateX(1000px);
@@ -495,13 +505,12 @@ body {
 	justify-content: center;
 	align-items: center;
 	animation: slideIn 0.75s 1.45s forwards;
-}
+	width: 10vw;
 
-.sponsored img {
-	height: 100%;
-	object-fit: scale-down;
-	position: absolute;
-	animation: BlackenElement 1.6s 2.75s forwards;
+	img {
+		object-fit: scale-down;
+		animation: BlackenElement 1.6s 2.75s forwards;
+	}
 }
 
 /* [ ] Add cursor chasing effect to desktop version */
@@ -523,7 +532,7 @@ body {
 		background: url("https://i.pinimg.com/564x/f2/4c/b0/f24cb0e45e62ad7bf2fb9f2871ebfc7c.jpg")
 			no-repeat fixed;
 
-		overflow-x: hidden; // Prevent scrolling
+		overflow: hidden; // Prevent scrolling
 		background-size: cover;
 		position: static;
 		// top: 0;
@@ -552,7 +561,6 @@ body {
 				opacity: 0.7;
 				filter: none;
 			}
-
 		}
 
 		nav {
@@ -565,6 +573,7 @@ body {
 			position: absolute;
 			top: 0;
 			left: 0;
+			width: 100%;
 
 			.hamburger-toggle {
 				display: flex;
@@ -574,8 +583,8 @@ body {
 					border: none;
 				}
 				button div {
-					width: 30px;
-					height: 3px;
+					width: 26px;
+					height: 2px;
 					margin: 6.5px 0;
 					background-color: var(--site-white);
 				}
@@ -598,7 +607,7 @@ body {
 				left: 0;
 				// width: 80%;
 				z-index: 999;
-				min-height: 100vh;
+				// min-height: 100vh;
 				height: auto;
 				padding-left: 20px;
 				justify-content: space-between;
@@ -998,9 +1007,7 @@ body {
 
 		img {
 			animation: none;
-			filter: brightness(10000%) contrast(10000%); // Completely whiten an image
 			position: static;
-			width: 65%;
 		}
 	}
 
