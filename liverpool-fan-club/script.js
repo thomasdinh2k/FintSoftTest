@@ -121,10 +121,12 @@ $(function () {
 
 // Using Js to animate specifically
 $(function () {
-	$(".nav-links").each(function (index, element) {
-		// element == this
-		$(element).css("animation-delay", `${0.15 * index}s`)
-	})
+	if ($("body").width() > 768) {
+		$(".nav-links").each(function (index, element) {
+			// element == this
+			$(element).css("animation-delay", `${0.15 * index}s`)
+		})
+	}
 })
 
 // $(document).ready(function () {
@@ -136,25 +138,24 @@ $(function () {
 // })
 
 $(document).ready(function () {
-	
-	$("nav").hover(function () {
+	$("nav").hover(
+		function () {
 			// over
 			adjustWrapperPadding()
-			
-		}, function () {
+		},
+		function () {
 			adjustWrapperPadding()
 			// out
 		}
-	);
-	
-	
+	)
+
 	// Re-calculate every time window's size changes
 	$(window).resize(adjustWrapperPadding)
 })
 
 function adjustWrapperPadding() {
 	let navHeight = $("nav").outerHeight(true)
-	let calculatedMargin = `${ navHeight / 2 }px`
+	let calculatedMargin = `${navHeight / 2}px`
 	console.log("Current navHeight:", navHeight)
 
 	if ($("body").width() > 768) {
