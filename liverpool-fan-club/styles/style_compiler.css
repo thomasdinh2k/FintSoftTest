@@ -202,7 +202,7 @@ body nav .menu .footer {
 }
 .content video {
   height: 100%;
-  width: -webkit-fill-available;
+  width: 100%;
 }
 .content::after {
   content: "";
