@@ -126,3 +126,23 @@ $(function () {
 		$(element).css("animation-delay", `${0.15 * index}s`)
 	})
 })
+
+// $(document).ready(function () {
+// 	// Glue .sub-menu to Nav
+// 	let navHeight = $("nav").outerHeight(true)
+// 	let calculatedMargin = `${navHeight / 2 - (12)}px`
+// 	console.log("Current navHeight", navHeight)
+// 	$(".sub-menu").css("marginTop", calculatedMargin)
+// })
+
+$(document).ready(function () {
+	adjustSubMenuMargin()
+	$(window).resize(adjustSubMenuMargin)
+})
+
+function adjustSubMenuMargin() {
+	let navHeight = $("nav").outerHeight(true)
+	let calculatedMargin = `${navHeight / 2 - 12}px`
+	console.log("Current navHeight:", navHeight)
+	$(".sub-menu").css("marginTop", calculatedMargin)
+}

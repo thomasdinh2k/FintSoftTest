@@ -37,6 +37,7 @@ body nav .logo {
 body nav .logo img {
   filter: brightness(100%);
   max-width: 75%;
+  align-self: baseline;
 }
 body nav .logo .mobile {
   display: none;
@@ -83,16 +84,11 @@ body nav .menu .menu-items {
   gap: 2vw;
 }
 body nav .menu .menu-items li .wrapper {
-  /* z-index: -777; */
   display: none;
   position: absolute;
-  /* top: 55px; */
   transform: translateY(-100%);
   left: 100px;
   right: 100px;
-  /* background-color: aliceblue; */
-  /* animation: slideDownSubs 0.3s ease-out forwards; */
-  /* animation: slideDownSubs 0.5s ease-out forwards; */
   animation: slideDownSubs 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
   /* Sub-Menu */
 }
@@ -100,18 +96,14 @@ body nav .menu .menu-items li .wrapper .sub-menu {
   display: flex;
   position: relative;
   overflow: hidden;
-  margin-top: 31px;
   list-style-type: none;
   text-transform: capitalize;
-  /* z-index: -1; */
   padding: 35px 40px;
   border-top: 2px solid var(--site-red);
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   background-color: whitesmoke;
   justify-content: space-between;
-  /* animation: slideDownSub 2s cubic-bezier(.39,-1.05,.58,1.95); */
   transform: translateY(-8px);
-  /* transform: translateY(-500px); */
 }
 body nav .menu .menu-items li .wrapper .sub-menu.show {
   display: flex;
@@ -229,7 +221,7 @@ body nav .menu .footer {
 
 /* Arrow things */
 .arrow {
-  display: none;
+  display: inline;
   border: solid black;
   border-width: 0 2px 2px 0;
   padding: 0.2vw;
