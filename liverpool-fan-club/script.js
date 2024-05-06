@@ -136,7 +136,17 @@ $(function () {
 // })
 
 $(document).ready(function () {
-	adjustWrapperPadding()
+	
+	$("nav").hover(function () {
+			// over
+			adjustWrapperPadding()
+			
+		}, function () {
+			adjustWrapperPadding()
+			// out
+		}
+	);
+	
 	
 	// Re-calculate every time window's size changes
 	$(window).resize(adjustWrapperPadding)
