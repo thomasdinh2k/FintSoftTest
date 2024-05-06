@@ -144,7 +144,9 @@ body {
 						display: none;
 						// [x] sub-menu bị trôi theo scroll (sửa position: fixed)
 						position: absolute;
-						transform: translateY(-100%);
+						// transform: translateY(-100%);
+
+						top: -100%;
 						left: 100px;
 						right: 100px;
 						animation: slideDownSubs 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94)
@@ -164,7 +166,7 @@ body {
 
 							justify-content: space-between;
 
-							transform: translateY(-8px);
+							// transform: translateY(-8px);
 
 							&.show {
 								display: flex;
@@ -404,12 +406,12 @@ body {
 
 @keyframes slideDownSubs {
 	0% {
-		transform: translateY(-60px);
+		// top:-60%;
 		opacity: 0;
 	}
 
 	100% {
-		transform: translateY(0);
+		top: 50%;
 		opacity: 1;
 	}
 }
