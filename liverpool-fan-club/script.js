@@ -103,7 +103,7 @@ $(function () {
 	$(document).click(function (e) {
 		e.preventDefault()
 
-		console.log(e.target)
+		// console.log(e.target)
 
 		if ($("body").is(e.target)) {
 			// The event target is outside of nav
@@ -156,5 +156,8 @@ function adjustWrapperPadding() {
 	let navHeight = $("nav").outerHeight(true)
 	let calculatedMargin = `${ navHeight / 2 }px`
 	console.log("Current navHeight:", navHeight)
-	$(".wrapper").css("paddingTop", calculatedMargin)
+
+	if ($("body").width() > 768) {
+		$(".wrapper").css("paddingTop", calculatedMargin)
+	}
 }
