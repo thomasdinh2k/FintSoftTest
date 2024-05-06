@@ -112,11 +112,17 @@ $(function () {
 		}
 	})
 
-	// Sync body size on menu expansion
+	// (Mobile) Sync body size on menu expansion
 	$("body").click(function (e) {
 		e.preventDefault()
 		// syncBodySize()
 	})
+
+	// (Desktop) Make the sub-menu align with navbar
+	var navHeight = $("nav").outerHeight(true);
+	$(".wrapper").css("top", navHeight);
+
+	console.log("Set top of .wrapper to: " + navHeight + "px")
 })
 
 // Using Js to animate specifically
