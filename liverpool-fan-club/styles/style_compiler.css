@@ -145,7 +145,7 @@ body nav .menu .menu-items li .wrapper .sub-menu .sub-menu__links .sub-menu__col
   color: var(--site-red);
 }
 body nav .menu .menu-items li .wrapper .sub-menu .sub-menu__picture img {
-  max-width: 75vh;
+  max-width: 45vh;
 }
 body nav .menu .menu-items li:hover .wrapper {
   display: block;
