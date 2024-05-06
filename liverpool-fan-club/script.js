@@ -136,13 +136,15 @@ $(function () {
 // })
 
 $(document).ready(function () {
-	adjustSubMenuMargin()
-	$(window).resize(adjustSubMenuMargin)
+	adjustWrapperPadding()
+	
+	// Re-calculate every time window's size changes
+	$(window).resize(adjustWrapperPadding)
 })
 
-function adjustSubMenuMargin() {
+function adjustWrapperPadding() {
 	let navHeight = $("nav").outerHeight(true)
-	let calculatedMargin = `${navHeight / 2 - 12}px`
+	let calculatedMargin = `${ navHeight / 2 }px`
 	console.log("Current navHeight:", navHeight)
-	$(".sub-menu").css("marginTop", calculatedMargin)
+	$(".wrapper").css("paddingTop", calculatedMargin)
 }
