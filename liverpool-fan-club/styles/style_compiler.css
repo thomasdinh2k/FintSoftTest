@@ -5,6 +5,7 @@
   --site-white: #f5f5f5;
   --site-grey: #ccc;
   --phone-nav-width: 70vw;
+  --phone-padding: 10px;
 }
 
 html {
@@ -464,9 +465,7 @@ body nav .menu .footer {
     left: 0;
     z-index: 999;
     height: 100vh;
-    padding-inline: 20px;
     justify-content: space-between;
-    gap: 40px;
     margin-block-start: 0px;
     width: var(--phone-nav-width);
   }
@@ -482,9 +481,8 @@ body nav .menu .footer {
     flex: 2 2 auto;
     overflow-y: auto;
     min-height: 0px;
-  }
-  body nav .menu .menu--content::-webkit-scrollbar {
-    display: none;
+    padding-inline: var(--phone-padding);
+    margin-top: 20px;
   }
   body nav .menu .menu--header {
     position: sticky;
@@ -496,6 +494,7 @@ body nav .menu .footer {
     align-items: center;
     color: var(--site-red);
     border-bottom: 1px solid rgb(160, 164, 168);
+    padding-inline: var(--phone-padding);
     background-color: var(--site-white);
     z-index: 999;
   }
@@ -514,6 +513,7 @@ body nav .menu .footer {
     /* border: 1px solid salmon; Temp */
   }
   body nav .menu .menu--header button {
+    padding: 0px;
     border: none;
     background-color: var(--site-white);
   }
@@ -526,6 +526,7 @@ body nav .menu .footer {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
   }
   body nav .menu .menu-items li .nav-links {
     font-size: 0.9rem;
